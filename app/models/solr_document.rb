@@ -1,6 +1,8 @@
 class SolrDocument
   
-  include Blacklight::Solr::Document
-  include Blacklight::Solr::Document::Marc
+  after_initialize do
+    extend Blacklight::Solr::Document::Marc
+    extend Blacklight::Solr::Document::EAD
+  end
   
 end
