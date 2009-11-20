@@ -85,6 +85,7 @@ Rails::Initializer.run do |config|
   config.gem 'webrat', :version=>'0.5.3'
   config.gem 'cucumber', :version=>'0.3.104'
   config.gem 'rcov', :version=>'0.9.6'
+  
   # got this idea from Rails' Initializer#load_environment()
   # it's reading the file and evaluating it in the context of this code
   # This way, we keep things dry between Blacklight's stand-alone testing and 
