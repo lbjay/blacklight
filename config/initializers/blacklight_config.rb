@@ -39,12 +39,9 @@ Blacklight.configure(:shared) do |config|
   # default params for the SolrDocument.find_by_id method
   SolrDocument.default_params[:find_by_id] = {:qt => :document}
   
-  
   ##############################
   
-  
   config[:default_qt] = "search"
-  
 
   # solr field values given special treatment in the show (single result) view
   config[:show] = {
@@ -179,4 +176,3 @@ Blacklight.configure(:shared) do |config|
   # mean") suggestion is offered.
   config[:spell_max] = 5
 end
-

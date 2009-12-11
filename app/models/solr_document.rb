@@ -28,7 +28,7 @@ class SolrDocument
     end
   end
   
-  # could add a name to the bock, then provide the ability to remove individual named blocks?
+  # could add a name to the bock, then provide the ability to remove individual named blocks within the host app?
   #after_initialize :open_url do
     # 
   #end
