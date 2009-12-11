@@ -27,8 +27,10 @@
 
 <%= render :partial=>'solr_request' %>
 
-<% if @document.marc %>
-  <%= @document.marc.to_zotero(document_partial_name(@document)) %>
+<% if @document.respond_to? :marc %>
+
+  <%= @document.to_zotero(document_partial_name(@document)) %>
+
   <div class="lightboxContent" id="citation" style="display:none;">
     <%= render :partial => 'citation' %>
   </div>

@@ -18,15 +18,6 @@
 
 Blacklight.configure(:shared) do |config|
   
-  SolrDocument.after_initialize do
-    extend Blacklight::Solr::Document::Marc
-    extend Blacklight::Solr::Document::EAD
-    # FIXME: is this duplicated below?
-    self.marc_source_field  = :marc_display
-    self.marc_format_type   = :marc21
-    self.ead_source_field   = :xml_display
-  end
-  
   # default params for the SolrDocument.search method
   SolrDocument.default_params[:search] = {
     :qt=>:search,

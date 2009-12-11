@@ -1,22 +1,29 @@
 # meant to be mixed into a SolrDocument (Hash/Mash based object)
 module Blacklight::Solr::Document::Marc
   
-  # adds the marc_source_field and marc_format_type
-  # class accessors to whatever includes this module (SolrDocument.marc_source_field = 'xxx')
-  def self.included(base)
-    base.cattr_accessor :marc_source_field
-    base.cattr_accessor :marc_format_type
-  end
+  attr_accessor :marc_source_field
+  attr_accessor :marc_format_type
   
-  # This method gets attached to a SolrDocument.
-  # it uses the marc_source_field and marc_format_type
-  # class attributes to create the Blacklight::Marc::Document instance.
-  # Only returns a Blacklight::Marc::Document instance if
-  # the self.class.marc_source_field key exists.
   def marc
     @marc ||= (
-      Blacklight::Marc::Document.new fetch(self.class.marc_source_field), self.class.marc_format_type
-    ) if key?(self.class.marc_source_field)
+      Blacklight::Marc::Document.new fetch(marc_source_field), marc_format_type
+    ) if key?(marc_source_field)
+  end
+  
+  def to_zotero format
+    marc.to_zotero format
+  end
+  
+  def to_ala
+    marc.to_ala
+  end
+  
+  def to_mla
+    marc.to_mla
+  end
+  
+  def to_xml
+    marc.to_xml
   end
   
 end

@@ -34,9 +34,10 @@ end
     
     before(:all) do
       @hash_with_marcxml = get_hash_with_marcxml['response']['docs'][0]
-      SolrDocument.marc_source_field  = :marc_display
-      SolrDocument.marc_format_type   = :marcxml
+      #SolrDocument.marc_source_field  = :marc_display
+      #SolrDocument.marc_format_type   = :marcxml
       @solrdoc = SolrDocument.new(@hash_with_marcxml)
+      @solrdoc.marc_format_type = :marcxml
     end
     
     describe "new" do
@@ -68,7 +69,8 @@ end
  
       it "should have a valid storage field instatiated with an object" do
         #When we have more than marc, this will need to test each type.
-        @solrdoc.marc.should be_instance_of(Blacklight::Marc::Document)
+        @solrdoc.should respond_to :marc
+        @solrdoc.marc.should be_instance_of Blacklight::Marc::Document
       end
       
       it "should not try to create marc for objects w/out stored marc (marcxml test only at this time)" do
@@ -76,7 +78,7 @@ end
         # sure everything fails gracefully
         @hash_without_marcxml = get_hash_without_marcxml['response']['docs'][0]
         @solrdoc_without_marc = SolrDocument.new(@hash_without_marcxml)
-        @solrdoc_without_marc.marc.should be(nil)
+        @solrdoc_without_marc.should_not respond_to(:marc)
       end
     end
     

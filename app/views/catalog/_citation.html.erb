@@ -5,13 +5,12 @@
   <%= document_show_html_title %>
 </div>
 
-
-<% unless @document.marc.to_mla.blank? %>
+<% if @document.respond_to? :to_mla %>
   <h4>MLA</h4>
-  <%= @document.marc.to_mla %><br/><br/>
+  <%= @document.to_mla %><br/><br/>
 <% end %>
 
-<% unless @document.marc.to_apa.blank? %>
+<% if @document.respond_to? :to_apa %>
   <h4>APA</h4>
-  <%= @document.marc.to_apa %>
+  <%= @document.to_apa %>
 <% end %>
