@@ -1,12 +1,14 @@
 <div id="search">
 
 <script>
+status = off;
+index = 0;
 function updateAutoBox() {
 queryString = "/catalog/opensearch.json?q=" + $("#q").val();
 $.getJSON(queryString, function(data) {
 	searchTable = "<table id='autotable' style='background: white;z-index:1200;border-width:1;border-style:inset;border-color:black;position:absolute;white-space: nowrap;cursor:pointer'>";
 	$.each(data[1], function(i, item) {
-		searchTable = searchTable + "<tr><td><span class='autoitem' onClick='updateSearchBox(this);' value='" + item + "'>" + item + "</span></tr></td>";
+		searchTable = searchTable + "<tr><td><span class='autoitem' onClick='updateSearchBox(this);' value='" + item + "' level='" + i + "'>" + item + "</span></tr></td>";
 	})
 	searchTable = searchTable + "</table>";
 	$("#autocomplete").html(searchTable);
@@ -23,6 +25,7 @@ function updateSearchBox(obj) {
 q = document.getElementById("q");
 $("#q").val($(obj).html());
 $("#autotable").hide();
+status = on;
 //updateAutoBox();
 $("#q").focus();
             if (q.setSelectionRange)
