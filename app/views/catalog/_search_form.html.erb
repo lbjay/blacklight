@@ -40,11 +40,17 @@ originalQuery = $("#q").val();
 $.getJSON(queryString, function(data) {
 	searchTable = "<table id='autotable' style='background: white;z-index:1200;border-width:1;border-style:inset;border-color:black;position:absolute;white-space: nowrap;cursor:pointer'>";
 	$.each(data[1], function(i, item) {
-		searchTable = searchTable + "<tr><td><span class='autoitem' class='autoitem' onClick='updateSearchBox(this, 0);' value='" + item + "' level='" + (i+1) + "'>" + item + "</span></tr></td>";
+		searchTable = searchTable + "<tr class='autoitemRow'><td><span class='autoitem' class='autoitem' onClick='updateSearchBox(this, 0);' value='" + item + "' level='" + (i+1) + "'>" + item + "</span></tr></td>";
 num_queries = i + 1;
 	})
 	searchTable = searchTable + "</table>";
 	$("#autocomplete").html(searchTable);
+	$('.autoitemRow').mouseover(function() {
+	$(this).css("background-color", "#D5E2FF");
+})
+	$('.autoitemRow').mouseout(function() {
+	$(this).css("background-color", "white");
+})
 });
 }
                         $(document).bind('click', function(e){ 
