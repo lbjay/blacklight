@@ -134,6 +134,11 @@ ul.tools li {display: inline; margin: 0 10px;}
 #lightboxContainer {position:absolute; top:0; left:0; right:0; bottom:0; width:99.9%; height:99.9%; background-color:#000000; opacity: 0.6; filter:alpha(opacity=60); text-align:center; z-index:9;}
 #lightboxContent, .lightboxContent {position:absolute; display:block; background-color:#EFEFEF; border: 3px solid #DEDEDE; top: 25%; left:25%; width:50%; height:auto; padding-bottom:10px; text-align:center; opacity: 1.0; filter:alpha(opacity=100); z-index:10;}
 
+/*Marked List */
+#markedList ul {float:left;list-style-type: none inside; margin: 0; padding:0;}
+#markedList li {float:left; padding:0 10px 0 0;}
+.iconFolderSmall {padding:  0 0 0 20px; background: url(../../images/list.gif) no-repeat left;}
+
 /* Tag Cloud */
 .tagCloud1 {font-size: 1.0em;}
 .tagCloud2 {font-size: 1.2em;}

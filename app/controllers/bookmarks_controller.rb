@@ -26,10 +26,19 @@ class BookmarksController < ApplicationController
   update.wants.html { redirect_to :back }
   
   def create
-    if current_user.bookmarks.create(params[:bookmark])
-      flash[:notice] = "Successfully added bookmark."
+    success = true
+    @bookmarks = params[:bookmarks]
+    if @bookmarks.nil?
+      success = current_user.bookmarks.create(params[:bookmark])    
     else
-      flash[:error] = "There was a problem adding that bookmark."      
+      @bookmarks.each do |key, bookmark|
+        success = false unless current_user.bookmarks.create(bookmark)
+      end
+    end
+    if success
+      flash[:notice] = "Successfully added to favorites."
+    else
+      flash[:error] = "There was a problem adding to your favorites."
     end
     redirect_to :back
   end

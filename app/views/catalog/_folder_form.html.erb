@@ -1,0 +1,11 @@
+<div>
+<% form_tag("/folder", :name => "folder#{document[:id]}", :class => 'addFolderForm') do -%>
+  <%= hidden_field_tag(:id, h(document[:id])) %>
+  <%= link_to('Add to Marked List', folder_index_path, :class => 'submitForm')%>
+  <%= submit_tag 'Add to Marked List', :id => "submitFolderForm_#{document[:id]}", :class => 'hide' %>
+<<<<<<< .mine
+<% end %>
+</div>
+=======
+<% end %>
+</div>>>>>>>> .r1443

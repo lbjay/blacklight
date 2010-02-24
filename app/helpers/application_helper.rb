@@ -383,5 +383,24 @@ module ApplicationHelper
     end
     submit_function << "f.submit();"
   end
+  # determines if the given document id is in the folder
+  def item_in_folder?(doc_id)
+    session[:folder_document_ids] && session[:folder_document_ids].include?(doc_id) ? true : false
+  end
   
+  def render_refworks_texts(documents)
+    val = ''
+    documents.each do |doc|
+      val += render_refworks_text(doc) + "\n" unless doc.marc.nil? 
+    end
+    val
+  end
+  
+  def render_endnote_texts(documents)
+    val = ''
+    documents.each do |doc|
+      val += render_endnote_text(doc) + "\n" unless doc.marc.nil?
+    end
+    val
+  end
 end

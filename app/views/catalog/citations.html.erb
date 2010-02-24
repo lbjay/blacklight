@@ -1,0 +1,22 @@
+<div class="lightboxTitle">
+  <div class="lightboxBack">
+    <%= link_to "Close [X]", folder_index_path, {:class => "lightboxLink", :name => 'citation'} %>
+  </div>
+  Citations
+</div>
+
+<% @documents.each do |document| -%>
+  <h3><%= document[:title_display] %></h3>
+  <% unless document.marc.nil? %>
+    <% unless document.marc.to_mla.blank? %>
+      <h4>MLA</h4>
+      <%= document.marc.to_mla %><br/><br/>
+      <% end %>
+
+      <% unless document.marc.to_apa.blank? %>
+      <h4>APA</h4>
+      <%= document.marc.to_apa %>
+      <% end %>
+  <% end %>
+<% end %>  
+  

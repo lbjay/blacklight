@@ -20,3 +20,6 @@
 	</li>
   </ul>
 <% end %>
+<% unless item_in_folder?(@document.value_for(:id)) %>
+  <%= render :partial=>'folder_form', :locals=>{:document=>@document} %>
+<% end %>

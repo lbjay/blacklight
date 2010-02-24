@@ -1,0 +1,45 @@
+<h1>Marked List</h1>
+
+<div id="returnToSearch">
+  <%= link_back_to_catalog :label=>'&larr; Return to search results' %>
+</div>
+
+<ul id="markedList">
+  <li>
+    <%= link_to_function "Print", "window.print();"%>
+  </li>
+  <li>
+    <%= link_to "Email", emails_path(:id => @documents.collect {|doc| doc.get(:id)})%>
+  </li>
+  <li>
+    <%= link_to "SMS", sms_path(:id => @documents.collect {|doc| doc.get(:id)})%>
+  </li>
+  <li>
+    <%= link_to "Cite", citations_catalog_path(:id => @documents.collect{|doc| doc.get(:id)}) %>
+  </li>
+
+<% if current_user %>  
+  <li>
+    <%= render :partial=>'catalog/bookmark_form', :locals=>{:documents=>@documents} %>
+  </li>  
+<% end %>
+
+  <li>
+    <%= render :partial => 'catalog/refworks_form', :locals => {:documents=>@documents} %>
+  </li>
+  <li>
+    <%= link_to "Export to EndNote", endnote_path(:id => @documents.collect {|doc| doc.get(:id)}, :format => 'endnote')%>
+  </li>
+  <li>
+    <%= link_to "Clear Marked List", clear_folder_path, :method => :delete %>
+  </li>
+</ul>
+
+<div id="results">
+<% i = 0 %>
+<% @documents.each do |document| %>
+	<%= render_document_partial document, :index, i, 0, true %>
+	[<%= link_to 'remove', folder_path(document[:id]), :method => :delete, :confirm => 'Remove this item?' %>]
+  <% i+= 1%>
+<% end %>
+</div>
