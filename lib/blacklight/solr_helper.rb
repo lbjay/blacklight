@@ -145,6 +145,15 @@ module Blacklight::SolrHelper
     
   end
   
+  # gets a collection of documents based on the ids provided
+  def get_solr_response_for_doc_ids(doc_ids=[], extra_controller_params={})
+    documents = []
+    doc_ids.each { |doc_id|
+      response, document = get_solr_response_for_doc_id(doc_id)
+      documents << document
+    }
+    documents
+  end
   # a solr query method
   # given a user query, return a solr response containing both result docs and facets
   # - mixes in the Blacklight::Solr::SpellingSuggestions module

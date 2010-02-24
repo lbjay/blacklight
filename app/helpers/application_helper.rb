@@ -105,14 +105,14 @@ module ApplicationHelper
   # based on the value of doc[:format]
   # if this value is blank (nil/empty) the "default" is used
   # if the partial is not found, the "default" partial is rendered instead
-  def render_document_partial(doc, action_name)
-    format = document_partial_name(doc)
-    begin
-      render :partial=>"catalog/_#{action_name}_partials/#{format}", :locals=>{:document=>doc}
-    rescue ActionView::MissingTemplate
-      render :partial=>"catalog/_#{action_name}_partials/default", :locals=>{:document=>doc}
-    end
-  end
+   def render_document_partial(doc, action_name, counter=0, offset=0, bookmarks_view=false)
+     format = document_partial_name(doc)
+     begin
+       render :partial=>"catalog/_#{action_name}_partials/#{format}", :locals=>{:document=>doc, :counter=>counter, :offset=>offset, :bookmarks_view=>bookmarks_view}
+     rescue ActionView::MissingTemplate
+       render :partial=>"catalog/_#{action_name}_partials/default", :locals=>{:document=>doc, :counter=>counter, :offset=>offset, :bookmarks_view=>bookmarks_view}
+     end
+   end
   
   # Search History and Saved Searches display
   def link_to_previous_search(params)

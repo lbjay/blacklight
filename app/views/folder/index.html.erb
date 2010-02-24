@@ -38,7 +38,7 @@
 <div id="results">
 <% i = 0 %>
 <% @documents.each do |document| %>
-	<%= render_document_partial document, :index, i, 0, true %>
+	<%= render_document_partial document, :index, i, 0, true%>
 	[<%= link_to 'remove', folder_path(document[:id]), :method => :delete, :confirm => 'Remove this item?' %>]
   <% i+= 1%>
 <% end %>

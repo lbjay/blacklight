@@ -1,5 +1,6 @@
-<% if item_in_folder?(document.value_for(:id)) %>
-  <div>This item is in <%= link_to 'Marked List', folder_index_path %></div>
+<% if item_in_folder?(document[id]) %>
+  <div>This item is in <%= link_to 'Marked List', folder_index_path %>
+</div>
 <% else %>
-  <%= render :partial=>'folder_form', :locals=>{:document=>document} %>
+  <%= render :partial=>'catalog/folder_form', :locals=>{:document=>document} %>
 <% end %>
