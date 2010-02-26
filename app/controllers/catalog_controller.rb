@@ -4,6 +4,8 @@ class CatalogController < ApplicationController
   
   before_filter :search_session, :history_session
   before_filter :delete_or_assign_search_session_params,  :only=>:index
+before_filter :adjust_for_bookmarks_view
+before_filter :adjust_for_folder_view
   after_filter :set_additional_search_session_values, :only=>:index
   
   # Whenever an action raises SolrHelper::InvalidSolrID, this block gets executed.
@@ -44,7 +46,18 @@ class CatalogController < ApplicationController
       format.endnote
     end
   end
-  
+    # we need to know if we are viewing the bookmarks page so we can
+  # include certain partials or not
+  def adjust_for_bookmarks_view
+    if params[:bookmarks_view] == "true"
+      session[:search][:bookmarks_view] = true
+    else
+      session[:search][:bookmarks_view] = false
+    end
+  end
+  def adjust_for_folder_view
+    session[:folder_view] = false
+  end
   # updates the search counter (allows the show view to paginate)
   def update
     session[:search][:counter] = params[:counter]
@@ -115,10 +128,15 @@ class CatalogController < ApplicationController
       case params[:style]
         when 'sms'
           if !params[:carrier].blank?
-            if params[:to].length != 10
+	    numberparts = params[:to].split('-')
+		number = ''
+		numberparts.each do |numb|
+		  number = number + numb
+                end 
+            if number.length < 10
               flash[:error] = "You must enter a valid 10 digit phone number"
             else
-              email = RecordMailer.create_sms_record(@documents, {:to => params[:to], :carrier => params[:carrier]}, from, host)
+              email = RecordMailer.create_sms_record(@documents, {:to => number, :carrier => params[:carrier]}, from, host)
             end
           else
             flash[:error] = "You must select a carrier"

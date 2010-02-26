@@ -1,3 +1,4 @@
+<% if !session[:folder_view] %>
 <div>
 <% form_tag("/folder", :name => "folder#{document[:id]}", :class => 'addFolderForm') do -%>
   <%= hidden_field_tag(:id, h(document[:id])) %>
@@ -5,3 +6,4 @@
   <%= submit_tag 'Add to Marked List', :id => "submitFolderForm_#{document[:id]}", :class => 'hide' %>
 <% end %>
 </div>
+<% end %>

@@ -4,7 +4,7 @@ class RecordMailer < ActionMailer::Base
     subject "Item Record: #{document.marc.marc['245']['a'] rescue 'N/A'}"
     from "no-reply@" << from_host
     if documents.size == 1
-      subject "Item Record: #{documents.first.marc_display.title}"
+      subject "Item Record: #{document.marc.marc['245']['a']}"
     else
       subject "Item records"
     end
