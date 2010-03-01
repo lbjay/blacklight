@@ -35,7 +35,7 @@ describe RecordMailer do
   describe "email" do
     before(:all) do
       details = {:to => 'test@test.com', :message => "This is my message"}
-      @email = RecordMailer.create_email_record(@document,details,'projectblacklight.org','projectblacklight.org:3000')
+      @email = RecordMailer.create_email_record([@document],details,'projectblacklight.org','projectblacklight.org:3000')
     end
     it "should receive the TO paramater and send the email to that address" do
       @email.to.should == ['test@test.com']
@@ -59,7 +59,7 @@ describe RecordMailer do
   describe "SMS" do
     before(:all) do
       details = {:to => '5555555555', :carrier => 'att'}
-      @sms = RecordMailer.create_sms_record(@document,details,'projectblacklight.org','projectblacklight.org:3000')
+      @sms = RecordMailer.create_sms_record([@document],details,'projectblacklight.org','projectblacklight.org:3000')
     end
     it "should create the correct TO address for the SMS email" do
       @sms.to.should == ['5555555555@txt.att.net']

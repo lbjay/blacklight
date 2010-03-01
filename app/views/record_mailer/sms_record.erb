@@ -1,4 +1,11 @@
 <% @documents.each do |document| -%>
-<%= "Title: #{document[:title_display]}" unless document[:title_display].nil? %>
-<%= "Author: #{document[:author_display]}" unless document[:author_display].nil? %>Link: <%= catalog_path(document[:id], :only_path => false, :host => @host) %>
+
+<%- if document.marc.marc and ! document.marc.marc['245'].nil? -%>
+<%= document.marc.marc['245']['a'] unless document.marc.marc['245']['a'].nil? -%>
+<%- end -%>
+<%- if document.marc.marc and ! document.marc.marc['100'].nil? -%>
+<%= " by #{document.marc.marc['100']['a']}" unless document.marc.marc['100']['a'].nil? %>
+<% end -%>
+Link: <%= catalog_path(document.id, :only_path => false, :host => @host) %>
+
 <% end %>

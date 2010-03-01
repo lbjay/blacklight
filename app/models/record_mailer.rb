@@ -1,10 +1,10 @@
 class RecordMailer < ActionMailer::Base
   def email_record(documents, details, from_host, host)
     recipients details[:to]
-    subject "Item Record: #{document.marc.marc['245']['a'] rescue 'N/A'}"
+    subject "Item Record: #{document[0].marc.marc['245']['a'] rescue 'N/A'}"
     from "no-reply@" << from_host
     if documents.size == 1
-      subject "Item Record: #{document.marc.marc['245']['a']}"
+      subject "Item Record: #{documents[0].marc.marc['245']['a']rescue 'N/A'}"
     else
       subject "Item records"
     end
