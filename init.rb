@@ -44,10 +44,12 @@ config.to_prepare do
   require_dependency File.expand_path('config/initializers/blacklight_config.rb') unless config.cache_classes
 end
 
-Engines.disable_code_mixing = true
-
 unless File.exists? File.join(Rails.root, 'config', 'initializers', 'blacklight_config.rb')
   raise "Blacklight requires a config/initializers/blacklight_config.rb file."
 end
+
+# Engines.disable_application_view_loading = true
+# Engines.disable_application_code_loading = true
+# Engines.disable_code_mixing = true
 
 require 'blacklight'
