@@ -36,9 +36,9 @@ class BookmarksController < ApplicationController
       end
     end
     if success
-      flash[:notice] = "Successfully added to favorites."
+      flash[:notice] = "Successfully added bookmark."
     else
-      flash[:error] = "There was a problem adding to your favorites."
+      flash[:error] = "There was a problem adding to your bookmarks."
     end
     redirect_to :back
   end

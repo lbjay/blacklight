@@ -1,5 +1,8 @@
 <div class="lightboxTitle">
   <div class="lightboxBack">
+<% if @documents.nil? %>
+  <% @documents = [@document] %>
+<% end %>
     <% if @documents.size == 1 %>
       <%= link_to "Close [X]", catalog_path(@documents.first.id), {:class => "lightboxLink", :name => 'email'} %>
     <% else %>
@@ -15,7 +18,7 @@
   <%= label_tag(:message, "Message:") %><br/>
   <%= text_area_tag :message %><br/>
   <% @documents.each do |doc| %>
-    <%=hidden_field_tag "id[]", doc.get(:id)%>
+    <%=hidden_field_tag "id[]", doc[:id]%>
   <% end %>
   <%=hidden_field_tag :style, 'email'%>
   <%= submit_tag "Send" %>
