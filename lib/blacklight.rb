@@ -4,6 +4,8 @@ module Blacklight
   # load up the CoreExt by referencing it:
   CoreExt
   
+  autoload :App, 'blacklight/app'
+  
   autoload :Configurable, 'blacklight/configurable'
   autoload :SearchFields, 'blacklight/search_fields'
 
