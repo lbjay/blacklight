@@ -2,8 +2,8 @@
   <%= link_to "Log Out", logout_path %> [<%= link_to current_user.login, user_path %>]
   <% if current_user.last_search_url %>
     | <%= link_to('View your last search', catalog_index_path(current_user.last_search_url)) %><% end %> | 
-    <%= link_to 'Your Bookmarks', bookmarks_path %> 
-    | <%= link_to "Marked List", folder_index_path %> |
+    <%= link_to 'Your Bookmarks', bookmarks_path %> |
+    | <%= link_to "Marked List", folder_index_path %> 
     <%= link_to "Saved Searches", saved_searches_path %>
 <% else %>
   <%= link_to 'Login', login_path %>
