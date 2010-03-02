@@ -13,3 +13,4 @@ config/SolrMarc/*.log*
 solr_marc/solrmarc.log
 
 *.log
+solrmarc.log*
