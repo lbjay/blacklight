@@ -1,10 +1,12 @@
 module Blacklight::App::Controller::Application
   
   def self.included base
-    base.filter_parameter_logging :password, :password_confirmation  
-    base.helper_method :current_user_session, :current_user
-    base.helper_method [:request_is_for_user_resource?]#, :user_logged_in?]
-    base.layout :choose_layout
+    base.class_eval do
+      filter_parameter_logging :password, :password_confirmation  
+      helper_method :current_user_session, :current_user
+      helper_method [:request_is_for_user_resource?]#, :user_logged_in?]
+      layout :choose_layout
+    end
   end
   
   def user_class; User; end
