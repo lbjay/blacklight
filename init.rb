@@ -48,8 +48,8 @@ unless File.exists? File.join(Rails.root, 'config', 'initializers', 'blacklight_
   raise "Blacklight requires a config/initializers/blacklight_config.rb file."
 end
 
-# Engines.disable_application_view_loading = true
-# Engines.disable_application_code_loading = true
-# Engines.disable_code_mixing = true
+Engines.disable_application_view_loading = true
+Engines.disable_application_code_loading = true
+Engines.disable_code_mixing = true
 
 require 'blacklight'
