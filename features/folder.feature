@@ -59,8 +59,8 @@ Feature: User Folder
 	  And I should not get ckey "2007020969" in the results
 	  
 	Scenario: Do multiple citations when the folder has multiple items
-	  Given I have ckey "u5076740" in my folder
-	  And I have ckey "u5077466" in my folder
+	  Given I have ckey "2008308175" in my folder
+	  And I have ckey "2007020969" in my folder
 	  And I follow "Cite"
  	  Then I should see "Goldman, Jane. The Feminist Aesthetics of Virginia Woolf : Modernism, Post-impressionism and the Politics of the Visual. 1st pbk. ed. Cambridge, U.K.: Cambridge University Press, 2001."
  	  And I should see "Rhyner, Paula M. Emergent Literacy and Language Development : Promoting Learning In Early Childhood. New York: Guilford Press, 2009."
