@@ -21,7 +21,7 @@
   </div>
   SMS This
 </div>
-<% form_tag 'send_email_records', :id => 'email_form', :id => 'sms_form', :method => :post do %>
+<% form_tag '/send_email_records', :id => 'email_form', :id => 'sms_form', :method => :post do %>
   <%= label_tag(:to, "Phone Number:") %><br/>
   <%= text_field_tag :to %><br/>
   <%= label_tag(:carrier, "Carrier:") %><br/>
