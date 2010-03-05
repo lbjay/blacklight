@@ -3,7 +3,7 @@ module Blacklight::Helper::Application
   def application_name
     'Blacklight'
   end
-
+  
   # Over-ride in local app if you want to specify your own
   # stylesheets. Want to add your own stylesheets onto the defaults
   # from plugin?
@@ -14,7 +14,7 @@ module Blacklight::Helper::Application
   def render_stylesheet_includes
     stylesheet_link_tag 'yui', 'application', :plugin=>:blacklight, :media=>'all' 
   end
-  
+
   # Over-ride in local app if you want to specify your own
   # js. Want to add your own stylesheets onto the defaults
   # from plugin?
@@ -25,12 +25,12 @@ module Blacklight::Helper::Application
   def render_js_includes
     javascript_include_tag 'jquery-1.3.1.min.js', 'blacklight', 'application', 'accordion', 'lightbox', :plugin=>:blacklight 
   end
-  
+
   # collection of items to be rendered in the @sidebar
   def sidebar_items
     @sidebar_items ||= []
   end
-  
+
   #
   # Blacklight.config based helpers ->
   #
