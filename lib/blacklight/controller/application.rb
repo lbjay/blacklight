@@ -1,7 +1,9 @@
-module Blacklight::App::Controller::Application
+module Blacklight::Controller::Application
   
   def self.included base
     base.class_eval do
+      helper :all # include all helpers, all the time
+      protect_from_forgery # See ActionController::RequestForgeryProtection for details
       filter_parameter_logging :password, :password_confirmation  
       helper_method :current_user_session, :current_user
       helper_method [:request_is_for_user_resource?]#, :user_logged_in?]

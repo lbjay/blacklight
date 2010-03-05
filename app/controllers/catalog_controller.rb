@@ -1,5 +1,5 @@
 class CatalogController < ApplicationController
   
-  include Blacklight::App::Controller::Catalog
+  include Blacklight::Controller::Catalog
   
 end

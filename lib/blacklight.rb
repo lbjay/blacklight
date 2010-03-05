@@ -4,7 +4,18 @@ module Blacklight
   # load up the CoreExt by referencing it:
   CoreExt
   
-  autoload :App, 'blacklight/app'
+  module Controller
+    autoload :Application, 'blacklight/controller/application'
+    autoload :Bookmarks, 'blacklight/controller/bookmarks'
+    autoload :Catalog, 'blacklight/controller/catalog'
+    autoload :Feedback, 'blacklight/controller/feedback'
+    autoload :SavedSearches, 'blacklight/controller/saved_searches'
+    autoload :SearchHistory, 'blacklight/controller/search_history'
+  end
+  
+  module Helper
+    autoload :Application, 'blacklight/helper/application'
+  end
   
   autoload :Configurable, 'blacklight/configurable'
   autoload :SearchFields, 'blacklight/search_fields'
