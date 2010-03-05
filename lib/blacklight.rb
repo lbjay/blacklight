@@ -1,8 +1,8 @@
 module Blacklight
   
-  autoload :CoreExt, 'blacklight/core_ext.rb'
-  # load up the CoreExt by referencing it:
-  CoreExt
+  autoload :Pluggable, 'blacklight/pluggable'
+  
+  autoload :CoreExt, 'blacklight/core_ext'
   
   module Controller
     autoload :Application, 'blacklight/controller/application'

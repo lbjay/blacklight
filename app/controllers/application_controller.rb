@@ -3,6 +3,7 @@
 
 class ApplicationController < ActionController::Base
   
+  #plugin Blacklight::Controller::Application
   include Blacklight::Controller::Application
   
 end

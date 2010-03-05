@@ -53,3 +53,7 @@ Engines.disable_application_code_loading = true
 Engines.disable_code_mixing = true
 
 require 'blacklight'
+
+# to activate the #plugin method on ActionController::Base ->
+# require 'action_controller'
+# ::ActionController::Base.extend Blacklight::Pluggable
