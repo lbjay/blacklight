@@ -15,6 +15,11 @@ module Blacklight
   
   module Helper
     autoload :Application, 'blacklight/helper/application'
+    autoload :Bookmarks, 'blacklight/helper/bookmarks'
+    autoload :Catalog, 'blacklight/helper/catalog'
+    autoload :Feedback, 'blacklight/helper/feedback'
+    autoload :SavedSearches, 'blacklight/helper/saved_searches'
+    autoload :SearchHistory, 'blacklight/helper/search_history'
   end
   
   autoload :Configurable, 'blacklight/configurable'
