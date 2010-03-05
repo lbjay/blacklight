@@ -2,11 +2,7 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
   
-  include Blacklight::App::Controller::Application
+  include Blacklight::Controller::Application
   
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
 end

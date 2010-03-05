@@ -1,4 +1,4 @@
-module Blacklight::App::Helper::Application
+module Blacklight::Helper::Application
   
   def application_name
     'Blacklight'

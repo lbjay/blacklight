@@ -1,4 +1,4 @@
-module Blacklight::App::Controller::Catalog
+module Blacklight::Controller::Catalog
   
   def self.included base
     
