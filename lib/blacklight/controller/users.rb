@@ -1,17 +1,22 @@
 module Blacklight::Controller::Users
   
   def self.included base
-    base.class_eval do
+    base.instance_eval do
       # see vendor/plugins/resource_controller
       resource_controller :singleton
       create.flash { "Welcome #{@user.login}!"}
     end
+    base.send :include, InstanceMethods
   end
   
-  protected
+  module InstanceMethods
+
+    protected
   
-  def object
-    @object ||= current_user
+    def object
+      @object ||= current_user
+    end
+  
   end
   
 end
