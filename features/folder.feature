@@ -7,11 +7,13 @@ Feature: User Folder
 	  When I go to the catalog page
     When I fill in "q" with "Pluvial nectar of blessings"
     And I press "search"
-	  And I should see "2008308175"
+	  And I should see "Pluvial nectar of blessings"
  	  And I should see an add to folder form for ckey "2008308175"
  	  
  	Scenario: Ensure "Add to Folder" for is present on individual record
- 	  Given I am on the document page for id "2008308175"
+                When I go to the catalog page
+		Given that I have cleared my folder
+ 	  Given I am on the document page for id 2008308175
  	  Then I should see an add to folder form for ckey "2008308175"
  	  
  	Scenario: Adding an item to the folder should produce a status message
@@ -27,7 +29,7 @@ Feature: User Folder
     And I press "search"
     And I add ckey "2008308175" to my folder
     And I follow "Marked List"
-	  Then I should get ckey 2008308175 in the results
+	  Then I should see "Pluvial nectar of blessings"
 	  Given I am on the homepage
 	  When I fill in "q" with "Appius Claudius Pulcher"
 	  And I press "search"
@@ -60,7 +62,7 @@ Feature: User Folder
 	  
 	Scenario: Do multiple citations when the folder has multiple items
 	  Given I have ckey "2008308175" in my folder
-	  And I have ckey "2007020969" in my folder
+	  And I have ckey "79930185" in my folder
 	  And I follow "Cite"
- 	  Then I should see "Goldman, Jane. The Feminist Aesthetics of Virginia Woolf : Modernism, Post-impressionism and the Politics of the Visual. 1st pbk. ed. Cambridge, U.K.: Cambridge University Press, 2001."
- 	  And I should see "Rhyner, Paula M. Emergent Literacy and Language Development : Promoting Learning In Early Childhood. New York: Guilford Press, 2009."
+ 	  Then I should see "Ṅag-dbaṅ-blo-bzaṅ-rgya-mtsho, and Dennis Cordell. Pluvial Nectar of Blessings : a Supplication to the Noble Lama Mahaguru Padmasambhava. Dharamsala: Library of Tibetan Works and Archives, 2002."
+ 	  And I should see 'Iṣlāḥī, A. Aḥsan. (1978). Pākistānī ʻaurat dorāhe par. Lāhaur: Maktabah-yi Markazī Anjuman-i K̲h̲uddāmulqurʼān.'
