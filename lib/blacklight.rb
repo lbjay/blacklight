@@ -1,7 +1,5 @@
 module Blacklight
   
-  autoload :Pluggable, 'blacklight/pluggable'
-  
   autoload :CoreExt, 'blacklight/core_ext'
   
   module Controller

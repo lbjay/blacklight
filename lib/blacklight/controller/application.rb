@@ -1,23 +1,5 @@
 module Blacklight::Controller::Application
   
-  # this could be used when calling #plugin ->
-  
-  # def self.configure controller, opts = {}
-  #   opts = {:setup => true}.merge(opts)
-  #   controller.instance_eval do
-  #     helper :all # include all helpers, all the time
-  #     protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  #     filter_parameter_logging :password, :password_confirmation  
-  #     helper_method :current_user_session, :current_user
-  #     helper_method [:request_is_for_user_resource?]#, :user_logged_in?]
-  #     layout :choose_layout
-  #   end if opts[:setup]
-  # end
-  # 
-  # module ClassMethods
-  #   
-  # end
-  
   def self.included base
     base.instance_eval do
       helper :all # include all helpers, all the time
