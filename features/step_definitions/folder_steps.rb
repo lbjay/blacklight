@@ -15,7 +15,7 @@ Given /^that I have cleared my folder$/ do
   click_link("Marked List")
   click_link("Clear Marked List")
 end
-#Given /^I am logged in$/ do
-#  visit root_path
-#  click_link("Login using NetBadge")
-#end
+Then /^I should not get "([^\"]*)" in the marked list$/ do |arg1|
+  visit("/folder")
+  response.body.should_not  contain(arg1)
+end
