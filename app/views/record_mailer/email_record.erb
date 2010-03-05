@@ -1,7 +1,13 @@
 <% @documents.each do |document| -%>
-
-<%= "Title: #{document[:title_display]}" unless document[:title_display].nil? %>
-<%= "Author: #{document[:author_display]}" unless document[:author_display].nil? %>
+<%- if document.marc.marc and ! document.marc.marc['245'].nil? -%>
+<%= "Title: #{document.marc.marc['245']['a']}" unless document.marc.marc['245']['a'].nil? %> <%= document.marc.marc['245']['b'] unless document.marc.marc['245']['b'].nil? %>
+<%- end -%>
+<%- if document.marc.marc and ! document.marc.marc['100'].nil? -%>
+<%= "Author: #{document.marc.marc['100']['a']}" unless document.marc.marc['100']['a'].nil? %>
+<% end -%>
 Format: <%= document['format'] %>
-URL: <%= catalog_path(document[:id], :only_path => false, :host => @host) %>-------------------------------------------------------
-Message: <%= @message %><% end -%>
+URL: <%= catalog_path(document.id, :only_path => false, :host => @host) %>
+Message: <%= @message %>---------------------------------------------------------
+<% end -%>
+
+

@@ -148,10 +148,12 @@ module Blacklight::SolrHelper
   # gets a collection of documents based on the ids provided
   def get_solr_response_for_doc_ids(doc_ids=[], extra_controller_params={})
     documents = []
+    if(doc_ids.kind_of?(Array))
     doc_ids.each { |doc_id|
       response, document = get_solr_response_for_doc_id(doc_id)
       documents << document
     }
+    end
     documents
   end
   # a solr query method
