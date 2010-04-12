@@ -433,7 +433,6 @@ module ApplicationHelper
     val
   end
   
-<<<<<<< HEAD:app/helpers/application_helper.rb
   def render_endnote_texts(documents)
     val = ''
     documents.each do |doc|
@@ -441,6 +440,4 @@ module ApplicationHelper
     end
     val
   end
-=======
->>>>>>> master:app/helpers/application_helper.rb
 end
