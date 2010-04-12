@@ -26,7 +26,7 @@ module ApplicationHelper
   #end 
   #alias_method_chain :render_js_includes, :local
   def render_js_includes
-    javascript_include_tag 'jquery-1.3.1.min.js', 'jquery-ui-1.7.2.custom.min.js', 'blacklight', 'application', 'accordion', 'lightbox', :plugin=>:blacklight 
+    javascript_include_tag 'jquery-1.3.1.min.js', 'jquery-ui-1.7.2.custom.min.js', 'blacklight', 'application', 'accordion', 'lightbox', 'jquery.form.js', :plugin=>:blacklight 
   end
   
   # collection of items to be rendered in the @sidebar

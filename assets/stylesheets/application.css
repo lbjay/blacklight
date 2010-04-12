@@ -18,7 +18,7 @@ hr {border:none; height:1px; background-color:#ccc;}
 .topDottedBorder {border-top: 1px dotted #ccc;} 
 .bottomDottedBorder{border-bottom: 1px dotted #ccc;} 
 .formElement {font: 8pt Verdana, Arial, sans-serif;}
-
+.hide {display: none;}
 /* Links */
 a {outline: none;}
 a:link, a:visited, a:active {border-bottom: 1px dotted #aaa; color: #2e4f81; text-decoration: none;}
@@ -143,7 +143,7 @@ ul.tools li {display: inline; margin: 0 10px;}
 
 /*Marked List */
 #markedList ul {float:left;list-style-type: none inside; margin: 0; padding:0;}
-#markedList li {float:left; padding:0 10px 0 0;}
+#markedList li {float:left; padding:0 20px 0 0;}
 .iconFolderSmall {padding:  0 0 0 20px; background: url(../../images/list.gif) no-repeat left;}
 
 /* Tag Cloud */

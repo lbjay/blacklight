@@ -1,7 +1,14 @@
 $(function(){
 	var bl = new Blacklight();
 });
-	function makeFolderLinks(){
+
+/*************  
+ * Facet more dialog. Uses JQuery UI Dialog. Use crazy closure technique. 
+ * http://docs.jquery.com/UI/Dialog
+ */
+ 
+jQuery(document).ready(function($) {    
+    	function makeFolderLinks(){
 		$('.addFolderForm .submitForm').click(function(e){
 			e.preventDefault();
 			var el=$(this);
@@ -12,21 +19,7 @@ $(function(){
 			});
 		})
 	}
-$(document).ready(function() {
-  // adds classes for zebra striping table rows
-  $('table.zebra tr:even').addClass('zebra_stripe');
-  $('ul.zebra li:even').addClass('zebra_stripe');
 	makeFolderLinks();
-
-});
-
-/*************  
- * Facet more dialog. Uses JQuery UI Dialog. Use crazy closure technique. 
- * http://docs.jquery.com/UI/Dialog
- */
- 
-jQuery(document).ready(function($) {    
-    
     //Make sure more facet lists loaded in this dialog have
     //ajaxy behavior added to next/prev/sort                    
     function addBehaviorToMoreFacetDialog(dialog) {
