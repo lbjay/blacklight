@@ -157,6 +157,12 @@ describe ApplicationHelper do
 
       render_document_heading.should have_tag("h1", :text => document_heading, :count => 1)
      end
+
+    describe "document_list_partial_name" do
+      it "should return a string" do
+         document_list_partial_name.should be_a_kind_of(String)
+      end
+    end
    end
     
   
@@ -310,6 +316,7 @@ describe ApplicationHelper do
         end        
       end
     end
+
     
   end
   
