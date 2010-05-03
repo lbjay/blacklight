@@ -112,13 +112,12 @@ module ApplicationHelper
   end
 
   def document_list_partial_name
-    Blacklight.config[:index][:document_list_partial]
+    'catalog/document_list'
   end
   
   def render_document_list_partial
-    style = document_list_partial_name
     begin
-      render :partial=>"catalog/#{style}"
+      render :partial=>document_list_partial_name
     rescue ActionView::MissingTemplate
       render :partial=>"catalog/document_list"
     end
