@@ -43,6 +43,13 @@ module ApplicationHelper
     end
     return html
   end
+
+  def render_doc_classes(document=@document)
+     classes = []
+     classes << controller.controller_name
+     classes << controller.controller_name + "-" + controller.action_name
+     return classes.join(" ")
+  end
   
   # collection of items to be rendered in the @sidebar
   def sidebar_items
