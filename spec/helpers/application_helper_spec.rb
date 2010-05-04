@@ -163,6 +163,12 @@ describe ApplicationHelper do
          document_list_partial_name.should be_a_kind_of(String)
       end
     end
+
+    describe "facet_partial_name" do
+      it "should return a string" do
+         facet_partial_name.should be_a_kind_of(String)
+      end
+    end
    end
     
   

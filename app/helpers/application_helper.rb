@@ -130,6 +130,18 @@ module ApplicationHelper
     end
   end
 
+  def facet_partial_name solr_fname
+    "catalog/_facet_partials/default"
+  end
+  
+  def render_facet_partial solr_fname
+    begin
+      render :partial=>facet_partial_name(solr_fname), :locals => { :solr_fname => solr_fname }
+    rescue ActionView::MissingTemplate
+      render :partial=>"catalog/_facet_partials/default", :locals => { :solr_fname => solr_fname }
+    end
+  end
+
   # currently only used by the render_document_partial helper method (below)
   def document_partial_name(document)
     document[Blacklight.config[:show][:display_type]]
