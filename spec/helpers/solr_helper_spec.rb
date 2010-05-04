@@ -50,6 +50,8 @@ describe 'Blacklight::SolrHelper' do
     @multi_facets = {:format=>'Book', :language_facet=>'Tibetan'}
     @bad_facet = {:format=>'666'}
     @subject_search_params = {:commit=>"search", :search_field=>"subject", :action=>"index", :"controller"=>"catalog", :"per_page"=>"10", :"q"=>"wome"}
+    @single_range_str = {:title_display=>'[A to Z]'}
+    @single_range_timestamp = {:timestamp=>'[1996-01-01T01:00:00Z TO 2005-01-01T05:00:00Z]'}
   end
 
   # SPECS FOR blacklight.rb contents
@@ -142,6 +144,20 @@ describe 'Blacklight::SolrHelper' do
           end
         end
         params[:q].should == @mult_word_query
+      end
+    end
+
+    describe "string range facet, no query" do
+      it "should have proper solr parameters" do
+        params = @solr_helper.solr_search_params(:range => @single_range_str)
+	params[:fq].should include('title_display:[A-Z]')
+      end
+    end
+
+    describe "date range facet, no query" do
+      it "should have proper solr parameters" do
+        params = @solr_helper.solr_search_params(:range => @single_range_timestamp)
+	params[:fq].should include('timestamp:[1996-01-01T01:00:00Z TO 2005-01-01T05:00:00Z]')
       end
     end
 
