@@ -131,6 +131,7 @@ module ApplicationHelper
   end
 
   def facet_partial_name solr_fname
+    return Blacklight.config[:facet][:templates][solr_fname] unless Blacklight.config[:facet][:templates][solr_fname].nil?
     "catalog/_facet_partials/default"
   end
   

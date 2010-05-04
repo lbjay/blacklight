@@ -97,6 +97,10 @@ Blacklight.configure(:shared) do |config|
     :limits => {
       nil => 10,
       "subject_facet" => 20
+    },
+    # By specifying a field here, the facet block will be rendered using an alternative template
+    :templates => {
+      
     }
   }
 
