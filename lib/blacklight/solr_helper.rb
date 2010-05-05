@@ -77,7 +77,7 @@ module Blacklight::SolrHelper
     # Merge in certain values from HTTP query itelf
     ###
     # Omit empty strings and nil values. 
-    [:facets, :f, :page, :sort, :per_page].each do |key|
+    [:facets, :f, :range, :page, :sort, :per_page].each do |key|
       solr_parameters[key] = params[key] unless params[key].blank?      
     end
     # :q is meaningful as an empty string, should be used unless nil!
@@ -112,7 +112,7 @@ module Blacklight::SolrHelper
     # seems to put arguments in here that aren't really expected to turn
     # into solr params. 
     ###
-    solr_parameters.deep_merge!(extra_controller_params.slice(:qt, :q, :facets,  :page, :per_page, :phrase_filters, :f, :fq, :fl, :sort, :qf, :df )   )
+    solr_parameters.deep_merge!(extra_controller_params.slice(:qt, :q, :facets,  :page, :per_page, :phrase_filters, :f, :range, :fq, :fl, :sort, :qf, :df )   )
 
     
     ###
@@ -138,6 +138,22 @@ module Blacklight::SolrHelper
       end      
     end
 
+    if ( solr_parameters[:range])
+      range_request_params = solr_parameters.delete(:range)
+      solr_parameters[:fq] ||= []
+      range_request_params.each_pair do |facet_field, value_list|
+        value_list.each do |value|
+	  ends = value.gsub('[', '').gsub(']', '').split(' TO ').map{ |d| coerce_solr_param_to_ruby_datatype d } 
+	  if ends[0].kind_of? Time
+	    solr_parameters[:fq] << "#{facet_field}:[#{ends[0].xmlschema} TO #{ends[1].xmlschema}]" 
+          else
+	    range = ends[0]..ends[1]
+	    solr_parameters[:fq] << "#{facet_field}:[#{range.min} TO #{range.max}]"
+	  end
+	end
+      end
+    end
+
     # Facet 'more' limits. Add +1 to any configured facets limits,
     # also include 'nil' default limit.
     if ( default_limit = facet_limit_for(nil))
@@ -161,6 +177,23 @@ module Blacklight::SolrHelper
     
   end
   
+  def coerce_solr_param_to_ruby_datatype d
+    begin
+      return Integer(d)
+    rescue
+    end
+    
+    begin
+      return Float(d)
+    rescue
+    end
+
+    begin
+      return Time.xmlschema(d) 
+    rescue
+    end
+    d
+  end
   # a solr query method
   # given a user query, return a solr response containing both result docs and facets
   # - mixes in the Blacklight::Solr::SpellingSuggestions module
