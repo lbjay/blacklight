@@ -143,13 +143,7 @@ module Blacklight::SolrHelper
       solr_parameters[:fq] ||= []
       range_request_params.each_pair do |facet_field, value_list|
         value_list.each do |value|
-	  ends = value.gsub('[', '').gsub(']', '').split(' TO ').map{ |d| coerce_solr_param_to_ruby_datatype d } 
-	  if ends[0].kind_of? Time
-	    solr_parameters[:fq] << "#{facet_field}:[#{ends[0].xmlschema} TO #{ends[1].xmlschema}]" 
-          else
-	    range = ends[0]..ends[1]
-	    solr_parameters[:fq] << "#{facet_field}:[#{range.min} TO #{range.max}]"
-	  end
+	  solr_parameters[:fq] << "#{facet_field}:[#{value}]" 
 	end
       end
     end
@@ -177,23 +171,6 @@ module Blacklight::SolrHelper
     
   end
   
-  def coerce_solr_param_to_ruby_datatype d
-    begin
-      return Integer(d)
-    rescue
-    end
-    
-    begin
-      return Float(d)
-    rescue
-    end
-
-    begin
-      return Time.xmlschema(d) 
-    rescue
-    end
-    d
-  end
   # a solr query method
   # given a user query, return a solr response containing both result docs and facets
   # - mixes in the Blacklight::Solr::SpellingSuggestions module
