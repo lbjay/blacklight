@@ -189,7 +189,6 @@ module Blacklight::SolrHelper
     end
 
     begin
-      require 'time'
       return Time.xmlschema(d) 
     rescue
     end
