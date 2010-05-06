@@ -27,33 +27,33 @@ class BookmarksController < ApplicationController
   
   def create
     if current_user.bookmarks.create(params[:bookmark])
-      flash[:notice] = "Successfully added bookmark."
+      flash[:notice] = I18n.t(:added_bookmark)
     else
-      flash[:error] = "There was a problem adding that bookmark."      
+      flash[:error] = I18n.t(:added_bookmark_error)
     end
     redirect_to :back
   end
   
   def destroy
     if current_user.bookmarks.delete(Bookmark.find(params[:id]))
-      flash[:notice] = "Successfully removed that bookmark."
+      flash[:notice] = I18n.t(:removed_bookmark)
     else
-      flash[:error] = "Couldn't remove that bookmark."
+      flash[:error] = I18n.t(:removed_bookmark_error)
     end
     redirect_to :back
   end
   
   def clear    
     if current_user.bookmarks.clear
-      flash[:notice] = "Cleared your bookmarks."
+      flash[:notice] = I18n.t(:cleared_bookmark) 
     else
-      flash[:error] = "There was a problem clearing your bookmarks."
+      flash[:error] = I18n.t(:cleared_bookmark_error) 
     end
     redirect_to :action => "index"
   end
   
   protected
   def verify_user
-    flash[:error] = "Please log in to manage and view your bookmarks." and redirect_to :back unless current_user
+    flash[:error] = I18n.t(:bookmark_user_required) and redirect_to :back unless current_user
   end
 end
