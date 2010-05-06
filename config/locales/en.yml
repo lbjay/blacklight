@@ -13,10 +13,12 @@ en:
   back_to_bookmarks: "<< back to my bookmarks"
   your_saved_searches: "Saved Searches"
   show_bookmark: "Showing Bookmark: {{title}}"
-  edit_bookmark: "Editing Bookmark for \"{{title}}\""
+  edit_bookmark: "edit"
+  editing_bookmark: "Editing Bookmark for \"{{title}}\""
   user_required: "Please log in to see {{what}}."
   clear_bookmarks: "Clear Bookmarks"
   clear_bookmarks_confirm: "Clear your bookmarks?"
+  remove_bookmark: "remove"
   remove_bookmark_confirm: 
     one: "Remove this bookmark?"
     other: "Remove these bookmarks?"

@@ -1,4 +1,4 @@
-<h2><%= t(:edit_bookmark, :title => link_to(@bookmark.title, catalog_path(@bookmark.document_id))) %></h2>
+<h2><%= t(:editing_bookmark, :title => link_to(@bookmark.title, catalog_path(@bookmark.document_id))) %></h2>
 
 <% sidebar_items << capture do %>
   <%= link_to t(:back_to_bookmarks), bookmarks_path %>

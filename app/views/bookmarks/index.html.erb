@@ -47,8 +47,8 @@
       <% @bookmarks.each do |bm| %>
     		<tr>
     		  <td><%= link_to h(bm.title), catalog_path(bm.document_id) %></td>
-    			<td><%= link_to 'edit', edit_bookmark_path(bm) %></td>
-    			<td><%= link_to 'remove', bookmark_path(bm), :method => :delete, :confirm => t(:remove_bookmark_confirm, :count => 1) %></td>
+    			<td><%= link_to t(:edit_bookmark), edit_bookmark_path(bm) %></td>
+    			<td><%= link_to t(:remove_bookmark), bookmark_path(bm), :method => :delete, :confirm => t(:remove_bookmark_confirm, :count => 1) %></td>
     		</tr>
     	<% end %>
   	</table>
