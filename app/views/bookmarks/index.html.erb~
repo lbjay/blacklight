@@ -18,7 +18,7 @@
       <%= submit_tag 'find', :name=>:a %>
 		<% end %>
 	
-		<h3><%= t(:bookmark_tags) %></h3>
+		<h3><%= t(:bookmark_tags)</h3>
 	
 		<% @tags=current_user.bookmarks.tag_counts %>
 	
