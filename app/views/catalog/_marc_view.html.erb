@@ -1,12 +1,12 @@
 <div class="lightboxTitle" style="text-align:center;">
   <div class="lightboxBack">
-    <%= link_to "Close [X]", catalog_path(@document[:id]), {:class => "lightboxLink", :name => 'librarian_view'} %>
+    <%= link_to t(:close), catalog_path(@document[:id]), {:class => "lightboxLink", :name => 'librarian_view'} %>
   </div>
-  Librarian View
+  <%= t(:marc_view) %>
 </div>
 <div id="marc_view">
   <% fields = @document.marc.marc.find_all{|f| ('000'..'999') === f.tag }  %>
-  <div class="field">LEADER <%= @document.marc.marc.leader %></div>
+  <div class="field"><%= t(:leader, :leader => @document.marc.marc.leader) %></div>
   <%- fields.each do |field| -%>
 	<%- unless field.tag.to_s == "940" -%>
 	  <div class="field">

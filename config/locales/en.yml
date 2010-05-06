@@ -3,6 +3,7 @@
 
 en:
   hello: "Hello world"
+  close: "Close [x]"
   log_out: "Log Out"
   log_in: "Login"
   your_search_history: "Search History"
@@ -43,3 +44,48 @@ en:
   showing_items_tagged: 
     one: "Showing \"{{tag}}\" tagged items."
     other: "Showing \"{{tag}}\" tagged items."
+  bookmarked_item: "This item is in your {{link}}"
+  bookmark_item: 
+    one: "Bookmark this item"
+    other: "Bookmark these items"
+  citation_mla: "MLA"
+  citation_apa: "APA"
+  spelling_suggestion: "Did you mean to type {{list}}?"
+  email_this: "Email This"
+  email_address: "Email:"
+  email_message: "Message:"
+  email_send: "Send"
+  
+  facet_previous: "« Previou"
+  facet_next: "Next »"
+  facet_sort_index: "A-Z Sort"
+  facet_sort_count: "Numerical Sort"
+  facet_more: "more �"
+  
+  facet_title: "Limit your search"
+
+  marc_view: "Librarian View"
+  marc_leader: "LEADER {{leader}}"
+
+  search_q: "Search "
+  search_field: " in "
+  search_field_title: "Targeted search options"
+  search_submit: "search"
+
+  cite_this: "Cite This"
+  sms_this: "SMS This"
+  sms_select_carrier: "Please select your carrier"
+  sms_to: "Phone Number: "
+  sms_carrier: "Carrier:"
+  sms_send: "Send"
+  export_refworks: "Export to RefWorks"
+  export_endnote: "Export to EndNote"
+
+  results_per_page: "Show {{number}} per page"
+  results_per_page_title: "Number of results to display per page"
+  results_per_page_submit: "update"
+  results_sort_label: "Sort by "
+  results_sort_submit: "sort results"
+  
+  results_navigation_label: "Results navigation"
+  
