@@ -32,6 +32,7 @@ en:
   show: "Show {{what}}."
   all: "all"
   edit: "edit"
+  bookmark_search_submit: "find"
   showing_items_tagged: 
     one: "Showing \"{{tag}}\" tagged items."
     other: "Showing \"{{tag}}\" tagged items."

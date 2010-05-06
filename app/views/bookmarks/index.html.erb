@@ -15,7 +15,7 @@
 	  <h3><%= t(:search_bookmarks) %></h3>
 	  <% form_tag bookmarks_path, :method=>:get do %>
 	    <%= text_field_tag 'q', params[:q] %>
-      <%= submit_tag 'find', :name=>:a %>
+      <%= submit_tag t(:bookmark_search_submit), :name=>:a %>
 		<% end %>
 	
 		<h3><%= t(:bookmark_tags) %></h3>
