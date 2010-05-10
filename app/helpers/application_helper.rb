@@ -314,7 +314,7 @@ module ApplicationHelper
     '<span class="selected">' +
     render_facet_value(facet_solr_field, item, :suppress_link => true) +
     '</span>' +
-    ' [' + link_to("remove", remove_facet_params(facet_solr_field, item.value, params), :class=>"remove") + ']'
+    ' [' + link_to(I18n.t(:remove_facet), remove_facet_params(facet_solr_field, item.value, params), :class=>"remove") + ']'
   end
   
   # adds the value and/or field to params[:f]
@@ -416,7 +416,7 @@ module ApplicationHelper
 
   # link_back_to_catalog(:label=>'Back to Search')
   # Create a link back to the index screen, keeping the user's facet, query and paging choices intact by using session.
-  def link_back_to_catalog(opts={:label=>'Back to Search'})
+  def link_back_to_catalog(opts={:label=>I18n.t(:link_back_to_catalog)})
     query_params = session[:search].dup || {}
     query_params.delete :counter
     query_params.delete :total

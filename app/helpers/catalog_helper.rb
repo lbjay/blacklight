@@ -20,12 +20,13 @@ module CatalogHelper
 
       if collection.total_pages < 2
         case collection.size
-        when 0; "No #{entry_name.pluralize} found"
-        when 1; "Displaying <b>1</b> #{entry_name}"
-        else;   "Displaying <b>all #{total_num}</b> #{entry_name.pluralize}"
+        when 0; I18n.t :no_entries_found, :what => I18n.t(entry_name.to_sym, :count => total_num)
+	when 1; I18n.t :page_entries_info, :count => total_num, :start => start_num, :end => end_num, :what => I18n.t(entry_name.to_sym, :count => total_num)
+	else; I18n.t :page_entries_info, :count => total_num, :start => start_num, :end => end_num, :what => I18n.t(entry_name.to_sym, :count => total_num)
+ # i18n ERROR // WAS:  "Displaying <b>all #{total_num}</b> #{entry_name.pluralize}"
         end
       else
-        "Displaying #{entry_name.pluralize} <b>#{start_num} - #{end_num}</b> of <b>#{total_num}</b>"
+	I18n.t :page_entries_info, :count => total_num, :start => start_num, :end => end_num, :what => I18n.t(entry_name.to_sym, :count => total_num)
       end
   end
 

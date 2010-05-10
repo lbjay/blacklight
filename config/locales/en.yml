@@ -88,4 +88,14 @@ en:
   results_sort_submit: "sort results"
   
   results_navigation_label: "Results navigation"
+  item: 
+    one: "item"
+    other: "items"
+  no_entries_found: "No {{what}} found"
+  page_entries_info: 
+    one: "Displaying <b>{{count}}</b> {{what}}"
+    other: "Displaying {{what}} <b>{{start}} - {{end}}</b> of <b>{{count}}</b>"
   
+  remove_facet: "remove"
+  back_to_search: "Back to Search!"
+
