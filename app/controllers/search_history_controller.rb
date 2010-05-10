@@ -6,9 +6,9 @@ class SearchHistoryController < ApplicationController
   #TODO we may want to remove unsaved (those without user_id) items from the database when removed from history
   def destroy
     if session[:history].delete_at(params[:id].to_i)
-      flash[:notice] = "Successfully removed that search history item."
+      flash[:notice] = I18n.t(:search_history_destory)
     else
-      flash[:error] = "Couldn't remove that search history item."
+      flash[:error] = I18n.t(:search_history_destory_error)
     end
     redirect_to :back
   end
@@ -16,9 +16,9 @@ class SearchHistoryController < ApplicationController
   #TODO we may want to remove unsaved (those without user_id) items from the database when removed from history
   def clear
     if session[:history].clear
-      flash[:notice] = "Cleared your search history."
+      flash[:notice] = I18n.t(:search_history_clear)
     else
-      flash[:error] = "There was a problem clearing your search history."
+      flash[:error] = I18n.t(:search_history_clear_error)
     end
     redirect_to :back
   end

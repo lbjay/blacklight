@@ -27,17 +27,17 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Welcome #{@user_session.login}!"
+      flash[:notice] = I18n.t(:welcome, :who => @user_session.login)
       redirect_to root_path
     else
-      flash.now[:error] =  "Couldn't locate a user with those credentials"
+      flash.now[:error] = I18n.t(:user_sessions_create_error)
       render :action => :new
     end
   end
 
   def destroy
     current_user_session.destroy
-    flash[:notice] = "You have successfully logged out."
+    flash[:notice] = I18n.t(:log_out_success)
     redirect_to root_path
   end
 end

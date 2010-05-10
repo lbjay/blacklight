@@ -240,7 +240,7 @@ class CatalogController < ApplicationController
     if RAILS_ENV == "development"
       render # will give us the stack trace
     else
-      flash_notice = "Sorry, I don't understand your search."
+      flash_notice = I18n.t(:rsolr_request_error)
       # Set the notice flag if the flash[:notice] is already set to the error that we are setting.
       # This is intended to stop the redirect loop error
       notice = flash[:notice] if flash[:notice] == flash_notice
@@ -258,7 +258,7 @@ class CatalogController < ApplicationController
     if RAILS_ENV == "development"
       render # will give us the stack trace
     else
-      flash[:notice] = "Sorry, you have requested a record that doesn't exist."
+      flash[:notice] = I18n.t(:invalid_solr_id_error)
       redirect_to root_path, :status => 404
     end
     

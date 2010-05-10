@@ -98,4 +98,24 @@ en:
   
   remove_facet: "remove"
   back_to_search: "Back to Search!"
+  rsolr_request_error: "Sorry, I don't understand your search."
+  invalid_solr_id_error: "Sorry, you have requested a record that doesn't exist."
+
+  saved_searches_save: "Successfully saved your search." 
+  saved_searches_save_error: "The was a problem saving your search."
+  saved_searches_destroy: "Successfully removed that saved search." 
+  saved_searches_destroy_error: "Couldn't remove that saved search."
+  saved_searches_clear: "Cleared your saved searches." 
+  saved_searches_clear_error: "There was a problem clearing your saved searches."
+  saved_searches_user_required: "Please log in to manage and view your saved searches."
+  
+  search_history_destroy: "Successfully removed that search history item."
+  search_history_destroy_error: "Couldn't remove that search history item."
+  search_history_clear: "Cleared your search history."
+  search_history_clear_error: "There was a problem clearing your search history."
+
+  welcome: "Welcome {{who}}!"
+  log_out_success: "You have successfully logged out."
+  
+  user_sessions_create_error: "Couldn't locate a user with those credentials"
 
