@@ -2,6 +2,6 @@
   
   <%= render :partial=>'login_form' %>
 
-  <p>Don't have an account? <%= link_to 'Create one', new_user_path %></p>
+  <p><%= t(:register_call_to_action, :action => link_to( t(:register_new_user), new_user_path)) %></p>
 
 </div>

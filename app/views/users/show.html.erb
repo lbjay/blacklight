@@ -1,19 +1,19 @@
-<h3>Your Account</h3>
+<h3><%= t(:user_show) %></h3>
 
 <dl id="userInfo" class="defList">
-    <dt>Login ID</dt>
+    <dt><%= t(:user_login) %></dt>
     <dd><%= current_user.login %></dd>
 
-    <dt>Last Login</dt>
+    <dt><%= t(:user_last_login_at) %></dt>
     <dd><%= current_user.last_login_at %></dd>
 
   <% if current_user.last_search_url %>
-      <dt>Last Search</dt>
-      <dd><%= link_to 'view', catalog_index_path(current_user.last_search_url) %></dd>
+      <dt><%= t(:user_last_search) %></dt>
+      <dd><%= link_to t(:user_last_search_view), catalog_index_path(current_user.last_search_url) %></dd>
   <% end %>
   
-    <dt>Bookmarks</dt>
-    <dd><%= link_to 'view', bookmarks_path %></dd>
+    <dt><%= t(:user_bookmarks) %></dt>
+    <dd><%= link_to t(:user_bookmarks_view), bookmarks_path %></dd>
 
     <dt>Checkout Items</dt>
     <dd>None</dd>

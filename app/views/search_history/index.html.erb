@@ -1,21 +1,21 @@
-<h1>Search History</h1>
+<h1><%= t(:search_history_title) %></h1>
 <%- if @searches.blank? -%>
-  <h2>You have no search history</h2>
+  <h2><%= t(:no_search_history) %></h2>
 <%- else -%>
   <p>
-    <%= link_to "Clear Search History", clear_search_history_path, :method => :delete, :confirm => "Clear your search history?" %>
+    <%= link_to t(:clear_search_history), clear_search_history_path, :method => :delete, :confirm => t(:clear_search_history_confirm) %>
   </p>
-  <h2>Your recent searches</h2>
+  <h2><%= t(:your_recent_searches) %></h2>
   <table class="zebra">
   <%- @searches.each_with_index do |search, index| -%>
     <% content_tag :tr, :id => "document_#{index + 1}" do %>
       <td><%= link_to_previous_search(search.query_params) %></td>
       <td><%- if current_user && search.saved? -%>
-        <%= link_to "[saved]", saved_search_path(search.id), :method => :delete %>
+        <%= link_to t(:search_history_remove_saved), saved_search_path(search.id), :method => :delete %>
       <%- else -%>
-        <%= link_to "save", save_saved_search_path(search.id), :method => :put %>
+        <%= link_to t(:search_history_save), save_saved_search_path(search.id), :method => :put %>
       <%- end #search.saved? -%></td>
-      <td><%= link_to "delete", search_history_path(index), :method => :delete, :confirm => "Delete item?" %></td>
+      <td><%= link_to t(:destory_search_history), search_history_path(index), :method => :delete, :confirm => t(:destroy_search_history_confirm) %></td>
     <% end #content_tag %>
   <%- end -%>
   </table>

@@ -1,5 +1,5 @@
 <% if current_user and current_user.document_is_bookmarked? document[:id] %>
-  <span><%= t(:bookmarked_item, :link => link_to('bookmarks', bookmarks_path)) %></span>
+  <span><%= t(:item_is_in, :link => link_to(t(:bookmarks), bookmarks_path)) %></span>
 <% elsif current_user %>
   <%- @bookmark ||= Bookmark.new -%>
   <% form_for(@bookmark) do |f| %>

@@ -1,7 +1,7 @@
 <%- if @document.marc.marc and ! @document.marc.marc['245'].nil? -%>
-<%= @document.marc.marc['245']['a'] unless @document.marc.marc['245']['a'].nil? -%>
+<%= t(:sms_record_title, :title => @document.marc.marc['245']['a']) -%>
 <%- end -%>
 <%- if @document.marc.marc and ! @document.marc.marc['100'].nil? -%>
-<%= " by #{@document.marc.marc['100']['a']}" unless @document.marc.marc['100']['a'].nil? %>
+<%= t(:sms_record_author, :author => @document.marc.marc['100']['a']) %>
 <% end -%>
-Link: <%= catalog_path(@document[:id], :only_path => false, :host => @host) %>
+<%= t(:sms_record_url, :url => catalog_path(@document[:id], :only_path => false, :host => @host) %>

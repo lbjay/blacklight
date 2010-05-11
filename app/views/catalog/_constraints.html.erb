@@ -1,6 +1,6 @@
 <div id="appliedParams">
 
-	<h3>You searched for:<%= image_tag "magnifying_glass.gif", :alt=>"search icon", :plugin=>'blacklight' %></h3>
+	<h3><%= t(:constraints_title)<%= image_tag "magnifying_glass.gif", :alt=>t(:constraints_icon_alt), :plugin=>'blacklight' %></h3>
 
 	<span id="appliedQueries">
 		<% if ! localized_params[:q].blank? %>
@@ -12,12 +12,12 @@
 				<%= link_to('',
 					catalog_index_path(localized_params.merge(:q=>nil, :action=>'index')),
 					:class=>'btnRemove imgReplace',
-          :alt=>'x'
+          :alt=>t(:constraints_remove)
 				) %>
-				<%= image_tag "checkmark.gif", :alt=>"checkmark", :plugin=>'blacklight' %>
+				<%= image_tag "checkmark.gif", :alt=>t(:constraints_checkmark_alt), :plugin=>'blacklight' %>
 			</span>
 		<% else %>
-			<span class="appliedFilter"><span class="first"><span>No Keywords</span> </span></span>
+			<span class="appliedFilter"><span class="first"><span><%= t(:constraints_no_keywords) %></span> </span></span>
 		<% end %>
 	</span>
 
@@ -37,9 +37,9 @@
 								'',
 								catalog_index_path(remove_facet_params(facet, v, localized_params)),
 								:class=>'btnRemove imgReplace',
-                :alot=>'x'
+                :alt=> t(:constraints_remove)
 							) %>
-							<%= image_tag "checkmark.gif", :alt=>"checkmark", :plugin=>'blacklight' %>
+							<%= image_tag "checkmark.gif", :alt=>t(:constraints_checkmark_alt), :plugin=>'blacklight' %>
 						</span>
 					<% end %>
 				<% end %>
@@ -51,9 +51,9 @@
 		<% if params[:action] == 'index' %>
 			<%= page_entries_info @response.docs, :entry_name=>'item' %>
 		<% else %>
-			Showing <%= session[:search][:counter].to_i %> of <%= format_num(session[:search][:total]) %> items from your search.
+			<%= t(:items_from_your_search, :counter => session[:search][:counter].to_i, :total => format_num(session[:search][:total])) %>	
 		<% end %>
-		<%=link_to "Start&nbsp;over&thinsp;", catalog_index_path, :id=>"startOverLink" %>
+		<%=link_to t(:start_over), catalog_index_path, :id=>"startOverLink" %>
 	</div>
 	
 </div>
