@@ -11,12 +11,7 @@ t(:sms_select_carrier) => '',
 'Cricket' => 'cricket'
 }
 %>
-<div class="lightboxTitle">
-  <div class="lightboxBack">
-    <%= link_to t(:close), catalog_path(@document[:id]), {:class => "lightboxLink", :name => 'sms'} %>
-  </div>
-  <%= t(:sms_this) %>
-</div>
+<h1><%= t(:sms_this) %></h1>
 <% form_tag url_for(:action => 'send_email_record', :style => 'sms'), :id => 'sms_form', :method => :post do %>
   <%= label_tag(:to, t(:sms_to)) %><br/>
   <%= text_field_tag :to %><br/>
