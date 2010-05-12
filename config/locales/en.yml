@@ -200,6 +200,7 @@ en:
 
   application_name: "Blacklight"
   catalog_index_title: "{{application}} Search Results"
+  results_text: "Search Results"
   catalog_show_title: "{{document}} - {{application}}"
   opensearch_title: "{{application}}"
   opensearch_description: "{{application}} Search"
