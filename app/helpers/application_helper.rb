@@ -5,7 +5,7 @@ module ApplicationHelper
   include HashAsHiddenFields
   
   def application_name
-    'Blacklight'
+    I18n.t(:application_name)
   end
 
   ##

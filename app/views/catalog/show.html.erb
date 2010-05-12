@@ -1,4 +1,4 @@
-<% @page_title = "#{document_show_html_title} - #{application_name}" %>
+<% @page_title = t(:catalog_show_title, :document => document_show_html_title, :application => application_name) %>
 
 <%= render 'constraints', :localized_params=>session[:search] %>
 

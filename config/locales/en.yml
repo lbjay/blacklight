@@ -197,3 +197,10 @@ en:
   constraints_checkmark_alt: "checkmark"
   constraints_no_keywords: "No Keywords"
   constraints_remove: "x"
+
+  application_name: "Blacklight"
+  catalog_index_title: "{{application}} Search Results"
+  catalog_show_title: "{{document}} - {{application}}"
+  opensearch_title: "{{application}}"
+  opensearch_description: "{{application}} Search"
+  
