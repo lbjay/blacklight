@@ -75,7 +75,7 @@ en:
   email_message: "Message:"
   email_send: "Send"
   
-  facet_previous: "« Previosu"
+  facet_previous: "« Previus"
   facet_next: "Next »"
   facet_sort_index: "A-Z Sort"
   facet_sort_count: "Numerical Sort"
@@ -204,4 +204,7 @@ en:
   catalog_show_title: "{{document}} - {{application}}"
   opensearch_title: "{{application}}"
   opensearch_description: "{{application}} Search"
+ 
+  link_to_previous_document: "< Previous"
+  link_to_next_document: "Next >"
   
