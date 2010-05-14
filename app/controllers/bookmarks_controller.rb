@@ -27,18 +27,18 @@ class BookmarksController < ApplicationController
   
   def create
     if current_user.bookmarks.create(params[:bookmark])
-      flash[:notice] = I18n.t(:"bookmarks.action.added")
+      flash[:notice] = I18n.t(:"bookmarks.action.saved")
     else
-      flash[:error] = I18n.t(:"bookmarks.error.added")
+      flash[:error] = I18n.t(:"bookmarks.error.saved")
     end
     redirect_to :back
   end
   
   def destroy
     if current_user.bookmarks.delete(Bookmark.find(params[:id]))
-      flash[:notice] = I18n.t(:"bookmarks.action.removed")
+      flash[:notice] = I18n.t(:"bookmarks.action.destoryed")
     else
-      flash[:error] = I18n.t(:"bookmarks.error.removed")
+      flash[:error] = I18n.t(:"bookmarks.error.destoryed")
     end
     redirect_to :back
   end

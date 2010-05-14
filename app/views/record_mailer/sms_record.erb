@@ -1,7 +1,7 @@
 <%- if @document.respond_to?(:to_marc) and ! @document.to_marc['245'].nil? -%>
-<%= t(:sms_record_title, :title => @document.to_marc['245']['a']) -%>
+<%= t(:"record_mailer.sms.title", :title => @document.to_marc['245']['a']) -%>
 <%- end -%>
 <%- if @document.to_marc and ! @document.to_marc['100'].nil? -%>
-<%= t(:sms_record_author, :author => @document.to_marc['100']['a']) %>
+<%= t(:"record_mailer.sms.author", :author => @document.to_marc['100']['a']) %>
 <% end -%>
-<%= t(:sms_record_url, :url => catalog_path(@document[:id], :only_path => false, :host => @host) %>
+<%= t(:"record_mailer.sms.url", :url => catalog_path(@document[:id], :only_path => false, :host => @host) %>

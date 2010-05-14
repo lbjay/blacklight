@@ -2,6 +2,6 @@
   
   <%= render :partial=>'login_form' %>
 
-  <p><%= t(:register_call_to_action, :action => link_to( t(:register_new_user), new_user_path)) %></p>
+  <p><%= t(:"user_session.register_action", :action => link_to( t(:"user_session.new_user_link"), new_user_path)) %></p>
 
 </div>

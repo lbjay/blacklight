@@ -1,11 +1,11 @@
 <% if current_user %>
-  <%= link_to t(:log_out), logout_path %> [<%= link_to current_user.login, user_path %>]
+  <%= link_to t(:"util.log_out"), logout_path %> [<%= link_to current_user.login, user_path %>]
   <% if current_user.last_search_url %>
-    | <%= link_to(t(:your_last_search), catalog_index_path(current_user.last_search_url)) %><% end %> | 
-    <%= link_to t(:your_bookmarks), bookmarks_path %> |
-    <%= link_to t(:saved_searches_title), saved_searches_path %>
+    | <%= link_to(t(:"util.last_search_link"), catalog_index_path(current_user.last_search_url)) %><% end %> | 
+    <%= link_to t(:"util.bookmarks_link"), bookmarks_path %> |
+    <%= link_to t(:"util.saved_searches_link"), saved_searches_path %>
 <% else %>
-  <%= link_to t(:log_in), login_path %>
+  <%= link_to t(:"util.log_in"), login_path %>
 <% end %>
 | 
-<%= link_to t(:search_history_title), search_history_index_path %>
+<%= link_to t(:"util.search_history_link"), search_history_index_path %>

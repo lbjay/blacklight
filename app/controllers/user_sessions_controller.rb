@@ -27,17 +27,17 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = I18n.t(:welcome, :who => @user_session.login)
+      flash[:notice] = I18n.t(:"user_sessions.greeting", :who => @user_session.login)
       redirect_to root_path
     else
-      flash.now[:error] = I18n.t(:user_sessions_create_error)
+      flash.now[:error] = I18n.t(:"user_sessions.error.create")
       render :action => :new
     end
   end
 
   def destroy
     current_user_session.destroy
-    flash[:notice] = I18n.t(:log_out_success)
+    flash[:notice] = I18n.t(:"user_sessions.action.destroy")
     redirect_to root_path
   end
 end

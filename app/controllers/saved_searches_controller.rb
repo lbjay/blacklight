@@ -7,9 +7,9 @@ class SavedSearchesController < ApplicationController
   
   def save    
     if Search.update(params[:id], :user_id => current_user.id)
-      flash[:notice] = I18n.t(:saved_searches_save)
+      flash[:notice] = I18n.t(:"saved_searches.action.save")
     else
-      flash[:error] = I18n.t(:saved_searches_save_error)
+      flash[:error] = I18n.t(:"saved_searches.error.save")
     end
     redirect_to :back
   end
@@ -18,9 +18,9 @@ class SavedSearchesController < ApplicationController
   # is in the session[:history]
   def destroy
     if current_user.search_ids.include?(params[:id].to_i) && Search.update(params[:id].to_i, :user_id => nil)
-      flash[:notice] = I18n.t(:saved_searches_destory)
+      flash[:notice] = I18n.t(:"saved_searches.destory")
     else
-      flash[:error] = I18n.t(:saved_searches_destroy_error)
+      flash[:error] = I18n.t(:"saved_searches.error.destroy")
     end
     redirect_to :back
   end
@@ -29,9 +29,9 @@ class SavedSearchesController < ApplicationController
   # are in the session[:history]
   def clear    
     if Search.update_all("user_id = NULL", "user_id = #{current_user.id}")
-      flash[:notice] = I18n.t(:saved_searches_clear)
+      flash[:notice] = I18n.t(:"saved_searches.action.clear")
     else
-      flash[:error] =  I18n.t(:saved_searches_clear_error)
+      flash[:error] =  I18n.t(:"saved_searches.error.clear")
     end
     redirect_to :action => "index"
   end
@@ -39,6 +39,6 @@ class SavedSearchesController < ApplicationController
 
   protected
   def verify_user
-    flash[:error] = I18n.t(:saved_searches_user_required) and redirect_to :back unless current_user
+    flash[:error] = I18n.t(:"saved_searches.user_required") and redirect_to :back unless current_user
   end
 end

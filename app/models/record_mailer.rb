@@ -6,7 +6,7 @@ class RecordMailer < ActionMailer::Base
     raise ArgumentError.new("RecordMailer#email_record only works with documents with a #to_marc") unless document.respond_to?(:to_marc)
     
     recipients details[:to]
-    subject I18n.t(:record_mailer_subject, :title => document.to_marc['245']['a'] rescue 'N/A')
+    subject I18n.t(:"record_mailer.email.subject", :title => document.to_marc['245']['a'] rescue 'N/A')
     from "no-reply@" << from_host
     body :document => document, :host => host, :message => details[:message]
   end

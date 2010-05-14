@@ -16,6 +16,7 @@ en:
         message: "Your Message"
       user:
         login: "Login"
+        last_login_at: "Last Login"
         email: "Email"
         password: "Password"
         password_confirmation: "Confirm Password"
@@ -27,6 +28,8 @@ en:
   show_x: "Show {{what}}."
   all: "all"
   form_errors: "Please fix the following form errors:"
+  rsolr_request_error: "Sorry, I don't understand your search."
+  invalid_solr_id_error: "Sorry, you have requested a record that doesn't exist."
 
   catalog:
     index_title: "{{application}} Search Results"
@@ -93,7 +96,6 @@ en:
     link_to_previous_document: "< Previous"
     link_to_next_document: "Next >"
 
-    record_mailer_subject: "Item Record: {{title}}"
 
     constraints_title: "You searched for:"
     constraints:
@@ -101,14 +103,6 @@ en:
       checkmark_alt: "checkmark"
       no_keywords: "No Keywords"
       remove: "x"
-  util:
-    log_out: "Log Out"
-    log_in: "Login"
-    last_search_link: "View your last search"
-    bookmarks_link: "Your Bookmarks"
-    saved_searches_link: "Saved Searches"
-    recent_searches_link: "Your recent searches"    
-    search_history_link: "Search History"
 
   bookmarks:
     label: "bookmarks"
@@ -123,8 +117,8 @@ en:
     clear: "Clear Bookmarks"
     clear_confirm: "Clear your bookmarks?"
     edit: "edit"
-    remove: "remove"
-    remove_confirm: "Remove this bookmark?"
+    destory: "remove"
+    destory_confirm: "Remove this bookmark?"
     search_title: "Search your bookmarks"
     search:
       submit: "find"
@@ -132,13 +126,52 @@ en:
     tags:
       showing_items_tagged_x: "Showing \"{{tag}}\" tagged items."
     action:
-      added: "Successfully added bookmark."
-      removed: "Successfully removed that bookmark."
+      saved: "Successfully added bookmark."
+      destroyed: "Successfully removed that bookmark."
       cleared: "Cleared your bookmarks."
     error:
-      added: "There was a problem adding that bookmark."
-      removed: "Couldn't remove that bookmark."
+      saved: "There was a problem adding that bookmark."
+      destoryed: "Couldn't remove that bookmark."
       cleared: "There was a problem clearing your bookmarks."
+
+  saved_searches:
+    label: "your saved searches"
+    index_title: "Saved Searches"
+    no_items: "You have no saved searches"
+    clear: "Clear Saved Searches"
+    clear_confirm: "Clear your saved searches?"
+    destory:  "delete"
+    destory_confirm: "Delete item?"
+    your_items: "Your saved searches"
+    user_required: "Please log in to manage and view your saved searches."
+    action:
+      saved: "Successfully saved your search." 
+      destoyed: "Successfully removed that saved search." 
+      cleared: "Cleared your saved searches."
+    error:
+      saved: "The was a problem saving your search."
+      destroyed: "Couldn't remove that saved search."
+      cleared: "There was a problem clearing your saved searches."
+
+  search_history:
+    label: "search history"
+    index_title: "Search History"
+    no_items: "You have no search history"
+    clear: "Clear Search History"
+    clear_confirm: "Clear your search history?"
+    destory: "delete"
+    destory_confirm: "Delete item?"
+    your_items: "Your recent searches"
+    save: "save"
+    destory_saved: "[saved]"
+    action:
+      saved: ""
+      destroyed: "Successfully removed that search history item." 
+      cleared: "Cleared your search history."
+    error:
+      saved: ""
+      destroyed: "Couldn't remove that search history item."
+      cleared: "There was a problem clearing your search history."
 
   feedback:
     complete_title: "Thank you for your feedback"
@@ -148,81 +181,52 @@ en:
       name: 'A valid name is required'
       email: 'A valid email address is required'
       message: 'A message is required'
-    
-    
-     
 
-  hello: "Hello world"
+  user_sessions:
+    greeting: "Welcome {{who}}!"
+    register_action: "Don't have an account? {{action}}"
+    new_user_link: "Create one"
+    new:
+      submit: "Login"
+    action:
+      destroy: "You have successfully logged out."
+    error:
+      create: "Couldn't locate a user with those credentials"
 
-  edit: "edit"
-  
-  back_to_search: "Back to Search!"
-  rsolr_request_error: "Sorry, I don't understand your search."
-  invalid_solr_id_error: "Sorry, you have requested a record that doesn't exist."
+  users:
+    last_search_title: "Last Search"
+    last_search_view: "view"
+    bookmarks_title: "Bookmarks"
+    bookmarks_view: "view"
+    show_title: "Your Account"
+    new:
+      submit: "Create Account"
 
-  saved_searches_title: "Saved Searches"  
-  saved_searches: "your saved searches"
-  your_saved_searches: "Your saved searches"
+  util:
+    log_out: "Log Out"
+    log_in: "Login"
+    last_search_link: "View your last search"
+    bookmarks_link: "Your Bookmarks"
+    saved_searches_link: "Saved Searches"
+    recent_searches_link: "Your recent searches"    
+    search_history_link: "Search History"
 
-  saved_searches_save: "Successfully saved your search." 
-  saved_searches_save_error: "The was a problem saving your search."
-  destroy_saved_search: "delete"
-  destroy_saved_search_confirm: "Delete item?"
-  saved_searches_destroy: "Successfully removed that saved search." 
-  saved_searches_destroy_error: "Couldn't remove that saved search."
-  clear_saved_searches: "Clear Saved Searches"
-  clear_saved_searches_confirm: "Clear your saved searches?"
-  saved_searches_clear: "Cleared your saved searches." 
-  saved_searches_clear_error: "There was a problem clearing your saved searches."
-  saved_searches_user_required: "Please log in to manage and view your saved searches."
-  
-  destory_search_history: "delete"
-  destroy_search_history_confirm: "Delete item?"
-  search_history_destroy: "Successfully removed that search history item."
-  search_history_destroy_error: "Couldn't remove that search history item."
-  clear_search_history: "Clear Search History"
-  clear_search_history_confirm: "Clear your search history?"
-  search_history_clear: "Cleared your search history."
-  search_history_clear_error: "There was a problem clearing your search history."
-  search_history_save: "save"
-  search_history_remove_saved: "[saved]"
-
-  welcome: "Welcome {{who}}!"
-  log_out_success: "You have successfully logged out."
-  
-  user_sessions_create_error: "Couldn't locate a user with those credentials"
-  
-  no_saved_searches: "You have no saved searches"
-  no_search_history: "You have to search history"
-  
-  register_call_to_action: "Don't have an account? {{action}}"
-  register_new_user: "Create one"
-  register_submit: "Create Account"
-  login_submit: "Login"
-
-  user_show: "Your Account"
-  user_login: "Login ID"
-  user_last_login_at: "Last Login"
-  user_last_search: "Last Search"
-  user_last_search_view: "view"
-  user_bookmarks: "Bookmarks"
-  user_bookmarks_view: "view"
-
-  
-  send_email_record_error_number: "You must enter a valid 10 digit phone number"
-  send_email_record_error_carrier: "You must select a carrier"
-  send_email_record_error_email: "You must enter a valid email address"
-  send_email_record_error_recipient: "You must enter a recipient in order to send this message"
-  email_record_title: "Title: {{title}} {{subtitle}}"
-  email_record_author: "Author: {{author}}"
-  email_record_format: "Format: {{format}}"
-  email_record_url: "URL: {{url}}"
-  email_record_message: "Message: {{message}}"
-
-  sms_record_title: "{{title}}"
-  sms_record_author: " by {{author}}"
-  sms_record_url: "Link: {{url}}"
-
-
- 
-  
+  record_mailer:
+    error:
+      to: "You must enter a recipient in order to send this message"
+      sms:
+        to: "You must enter a valid 10 digit phone number"
+        carrier: "You must select a carrier"
+      email:
+        to: "You must enter a valid email address"
+    email:
+      subject: "Item Record: {{title}}"
+      title: "Title: {{title}} {{subtitle}}"
+      author: "Author: {{author}}"
+      format: "Format: {{format}}"
+      url: "URL: {{url}}"
+      message: "Message: {{message}}"
+    sms:
+     title: "{{title}}"
+     author: " by {{author}}"
+     url: "Link: {{url}}"
