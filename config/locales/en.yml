@@ -118,8 +118,8 @@ en:
     clear: "Clear Bookmarks"
     clear_confirm: "Clear your bookmarks?"
     edit: "edit"
-    destory: "remove"
-    destory_confirm: "Remove this bookmark?"
+    destroy: "remove"
+    destroy_confirm: "Remove this bookmark?"
     search_title: "Search your bookmarks"
     search:
       submit: "find"
@@ -132,7 +132,7 @@ en:
       cleared: "Cleared your bookmarks."
     error:
       saved: "There was a problem adding that bookmark."
-      destoryed: "Couldn't remove that bookmark."
+      destroyed: "Couldn't remove that bookmark."
       cleared: "There was a problem clearing your bookmarks."
 
   saved_searches:
@@ -141,8 +141,8 @@ en:
     no_items: "You have no saved searches"
     clear: "Clear Saved Searches"
     clear_confirm: "Clear your saved searches?"
-    destory:  "delete"
-    destory_confirm: "Delete item?"
+    destroy:  "delete"
+    destroy_confirm: "Delete item?"
     your_items: "Your saved searches"
     user_required: "Please log in to manage and view your saved searches."
     action:
@@ -160,11 +160,11 @@ en:
     no_items: "You have no search history"
     clear: "Clear Search History"
     clear_confirm: "Clear your search history?"
-    destory: "delete"
-    destory_confirm: "Delete item?"
+    destroy: "delete"
+    destroy_confirm: "Delete item?"
     your_items: "Your recent searches"
     save: "save"
-    destory_saved: "[saved]"
+    destroy_saved: "[saved]"
     action:
       saved: ""
       destroyed: "Successfully removed that search history item." 

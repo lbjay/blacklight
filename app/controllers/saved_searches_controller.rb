@@ -18,7 +18,7 @@ class SavedSearchesController < ApplicationController
   # is in the session[:history]
   def destroy
     if current_user.search_ids.include?(params[:id].to_i) && Search.update(params[:id].to_i, :user_id => nil)
-      flash[:notice] = I18n.t(:"saved_searches.destory")
+      flash[:notice] = I18n.t(:"saved_searches.destroy")
     else
       flash[:error] = I18n.t(:"saved_searches.error.destroy")
     end

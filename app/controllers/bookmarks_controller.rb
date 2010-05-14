@@ -36,9 +36,9 @@ class BookmarksController < ApplicationController
   
   def destroy
     if current_user.bookmarks.delete(Bookmark.find(params[:id]))
-      flash[:notice] = I18n.t(:"bookmarks.action.destoryed")
+      flash[:notice] = I18n.t(:"bookmarks.action.destroyed")
     else
-      flash[:error] = I18n.t(:"bookmarks.error.destoryed")
+      flash[:error] = I18n.t(:"bookmarks.error.destroyed")
     end
     redirect_to :back
   end

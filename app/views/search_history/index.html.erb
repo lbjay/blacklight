@@ -11,7 +11,7 @@
     <% content_tag :tr, :id => "document_#{index + 1}" do %>
       <td><%= link_to_previous_search(search.query_params) %></td>
       <td><%- if current_user && search.saved? -%>
-        <%= link_to t(:"search_history.destory_saved"), saved_search_path(search.id), :method => :delete %>
+        <%= link_to t(:"search_history.destroy_saved"), saved_search_path(search.id), :method => :delete %>
       <%- else -%>
         <%= link_to t(:"search_history.save"), save_saved_search_path(search.id), :method => :put %>
       <%- end #search.saved? -%></td>

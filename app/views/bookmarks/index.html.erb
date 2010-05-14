@@ -48,7 +48,7 @@
     		<tr>
     		  <td><%= link_to h(bm.title), catalog_path(bm.document_id) %></td>
     			<td><%= link_to t(:"bookmarks.edit"), edit_bookmark_path(bm) %></td>
-    			<td><%= link_to t(:"bookmarks.destory"), bookmark_path(bm), :method => :delete, :confirm => t(:"bookmarks.destory_confirm") %></td>
+    			<td><%= link_to t(:"bookmarks.destroy"), bookmark_path(bm), :method => :delete, :confirm => t(:"bookmarks.destroy_confirm") %></td>
     		</tr>
     	<% end %>
   	</table>
