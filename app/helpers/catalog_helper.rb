@@ -26,7 +26,7 @@ module CatalogHelper
  # i18n ERROR // WAS:  "Displaying <b>all #{total_num}</b> #{entry_name.pluralize}"
         end
       else
-	I18n.t :"catalog.page_entries_info", :count => total_num, :start => start_num, :end => end_num, :what => I18n.t(("catalog."entry_name).to_sym, :count => total_num)
+	I18n.t :"catalog.page_entries_info", :count => total_num, :start => start_num, :end => end_num, :what => I18n.t(("catalog."+ entry_name).to_sym, :count => total_num)
       end
   end
 
