@@ -5,7 +5,7 @@
   <p>
     <%= link_to t(:"search_history.clear"), clear_search_history_path, :method => :delete, :confirm => t(:"search_history.clear_confirm") %>
   </p>
-  <h2><%= t(:your_recent_searches) %></h2>
+  <h2><%= t(:"search_history.your_items") %></h2>
   <table class="zebra">
   <%- @searches.each_with_index do |search, index| -%>
     <% content_tag :tr, :id => "document_#{index + 1}" do %>
