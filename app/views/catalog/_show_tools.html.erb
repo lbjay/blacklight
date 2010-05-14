@@ -3,34 +3,34 @@
   
     <% if (@document.respond_to?(:export_as_mla_citation_txt) || @document.respond_to?(:export_as_apa_citation_txt)) %>
       <li class="cite">
-         <%= link_to t(:cite_this), citation_catalog_path(@document[:id]), {:id => 'citeLink', :name => 'citation', :class => 'lightboxLink'} %>
+         <%= link_to t(:"catalog.cite_link"), citation_catalog_path(@document[:id]), {:id => 'citeLink', :name => 'citation', :class => 'lightboxLink'} %>
       </li>
     <% end %>
     
     <% if @document.export_formats.keys.include?( :refworks_marc_txt ) %>
       <li class="refworks">
-        <%= link_to t(:export_refworks), refworks_export_url(@document) %>        
+        <%= link_to t(:"catalog.export_as_refworks_marc_txt_link"), refworks_export_url(@document) %>        
       </li>
     <% end %>
     
     <% if @document.export_formats.keys.include?( :endnote ) %>
       <li class="endnote">
-        <%= link_to t(:export_endnote), catalog_path(@document[:id], :format => 'endnote') %>
+        <%= link_to t(:"catalog.export_as_endnote_link"), catalog_path(@document[:id], :format => 'endnote') %>
       </li>
     <% end %>
     
     <% if @document.respond_to?(:to_marc) %>
       <li class="email">
-         <%= link_to t(:email_this), email_catalog_path(@document[:id]), {:id => 'emailLink', :name => 'email', :class => 'lightboxLink'} %>
+         <%= link_to t(:"catalog.email_link"), email_catalog_path(@document[:id]), {:id => 'emailLink', :name => 'email', :class => 'lightboxLink'} %>
       </li>
       <li class="sms">
-         <%= link_to t(:sms_this), sms_catalog_path(@document[:id]), {:id => 'smsLink', :name => 'sms', :class => 'lightboxLink'} %>
+         <%= link_to t(:"catalog.sms_link"), sms_catalog_path(@document[:id]), {:id => 'smsLink', :name => 'sms', :class => 'lightboxLink'} %>
       </li>
     <% end %>
     
     <% if @document.respond_to?(:to_marc) %>
       <li class="librarian_view">
-        <%= link_to t(:marc_view), librarian_view_catalog_path(@document[:id]), {:id => 'librarianLink', :name => 'librarian_view', :class => 'lightboxLink'} %>
+        <%= link_to t(:"catalog.marc_link"), librarian_view_catalog_path(@document[:id]), {:id => 'librarianLink', :name => 'librarian_view', :class => 'lightboxLink'} %>
       </li>
     <% end %>
     

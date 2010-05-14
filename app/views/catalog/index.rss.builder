@@ -3,9 +3,9 @@ xml.rss(:version=>"2.0") {
         
   xml.channel {
           
-    xml.title('Blacklight Catalog Search Results')
+    xml.title(t(:"catalog.index_title", :application => application_name))
     xml.link(formatted_catalog_index_url(:rss, params))
-    xml.description('Blacklight Catalog Search Results')
+    xml.description(t(:"catalog.index_title", :application => application_name))
     xml.language('en-us')
     
     @response.docs.each do |doc|

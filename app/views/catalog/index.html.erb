@@ -3,7 +3,7 @@
 	<%= render 'home' %>
 <% else %>
 
-	<% @page_title = t(:catalog_index_title, :application => application_name) %>
+	<% @page_title = t(:"catalog.index_title", :application => application_name) %>
 
 	<%= render :partial => 'search_form' %>
 	
@@ -12,7 +12,7 @@
 	<%= render 'constraints', :localized_params=>params %>
 	
 	<div class="pagination">
-	  <h2><%= t(:results_navigation_label) %></h2>
+	  <h2><%= t(:"catalog.results.navigation_label") %></h2>
 	  <%= will_paginate @response.docs, :page_links => false, :class => 'prev_next_links' %>
 	  <%= will_paginate @response.docs, :container => false %>
 	</div>

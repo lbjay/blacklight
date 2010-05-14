@@ -1,9 +1,9 @@
-<h1><%= t(:email_this) %></h1>
+<h1><%= t(:"catalog.email_title") %></h1>
 
 <% form_tag url_for(:action => 'send_email_record', :style => 'email'), :id => 'email_form', :method => :post do %>
-  <%= label_tag(:to, t(:email_address)) %><br/>
+  <%= label_tag(:to, t(:"catalog.email.to")) %><br/>
   <%= text_field_tag :to %><br/>
-  <%= label_tag(:message, t(:email_message)) %><br/>
+  <%= label_tag(:message, t(:"catalog.email.message")) %><br/>
   <%= text_area_tag :message %><br/>
-  <%= submit_tag t(:email_send) %>
+  <%= submit_tag t(:"catalog.email.submit") %>
 <% end %>

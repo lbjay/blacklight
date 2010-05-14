@@ -1,5 +1,5 @@
 <% if @response.response[:numFound] <= Blacklight.config[:spell_max] and @response.spelling.words.size > 0 %>
   <div id="spell">
-    <h4 class="suggest"><i><%= t(:spelling_suggestion, :list => @response.spelling.words.map { |word| link_to_query(word) }.join(', or ')) %></i></h4>
+    <h4 class="suggest"><i><%= t(:"catalog.spelling_suggestion_x", :list => @response.spelling.words.map { |word| link_to_query(word) }.join(', or ')) %></i></h4>
   </div>
 <% end %>

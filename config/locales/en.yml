@@ -16,27 +16,128 @@ en:
         password: "Password"
         password_confirmation: "Confirm Password"
         
+  application_name: "Blacklight"
+
+  catalog:
+    index_title: "{{application}} Search Results"
+    back_to_index: "<< Back to search"
+    show_title: "{{document}} - {{application}}"
+    results_text: "Search Results"
+    opensearch_title: "{{application}}"
+    opensearch_description: "{{application}} Search"
+    search_keyword: "Search "
+    search_in: " in "
+    search_field_title: "Targeted search options"
+    search_submit: "search"
+    document_is_bookmarked: "This item is in {{link}}"
+    document_bookmark_link: "your bookmarks"
+    bookmark:
+      submit: "Bookmark this item"
+    cite_link: "Cite This"
+    export_as_mla_citation_title: "MLA"
+    export_as_apa_citation_title: "APA"
+    export_as_refworks_marc_txt_link: "Export to RefWorks"
+    export_as_endnote_link: "Export to RefWorks"
+    spelling_suggestion_x: "Did you mean to type {{list}}?"
+    email_link: "Email This"
+    email_title: "Email This"
+    email:
+      to: "Email:"
+      message: "Message:"
+      submit: "Send"
+    sms_link: "SMS This"
+    sms_title: "SMS This"
+    sms:
+      to: "Phone Number: "
+      carrier: "Carrier:"
+      select_carrier: "Please select your carrier"
+      submit: "Send"
+    facet_title: "Limit your search"
+    facet:
+      previous: "Â« Previous"
+      next: "Next Â»"
+      more: "more ?"
+      sort:
+        index: "A-Z Sort"
+        count: "Numerical Sort"
+      remove: "remove"
+    marc_link: "Librarian View"
+    marc_view: "Librarian View"
+    marc_leader_x: "LEADER {{leader}}"
+    results:
+      navigation_label: "Results navigation"
+      per_page_title: "Number of results to display per page"
+      per_page: "Show {{number}} per page"
+      per_page_submit: "update"
+      sort_label: "Sort by "
+      sort_submit: "sort results"
+    item: 
+      one: "item"
+      other: "items"
+    no_entries_found: "No {{what}} found"
+    page_entries_info: 
+      one: "Displaying <b>{{count}}</b> {{what}}"
+      other: "Displaying {{what}} <b>{{start}} - {{end}}</b> of <b>{{count}}</b>"
+    items_from_your_search: "Showing {{counter}} of {{total}} items from your search."
+    start_over: "Start&nbsp;over&thinsp;"
+    link_to_previous_document: "< Previous"
+    link_to_next_document: "Next >"
+
+    record_mailer_subject: "Item Record: {{title}}"
+
+    constraints_title: "You searched for:"
+    constraints:
+      icon_alt: "search icon"
+      checkmark_alt: "checkmark"
+      no_keywords: "No Keywords"
+      remove: "x"
+     
+     
+
   hello: "Hello world"
   close: "Close [x]"
   cancel: "Cancel"
   log_out: "Log Out"
   log_in: "Login"
+
+  user_required_for_x: "Please log in to see {{what}}."
+
   search_history_title: "Search History"
   your_last_search: "View your last search"
   your_recent_searches: "Your recent searches"
+
+  show_x: "Show {{what}}."
+  all: "all"
+  edit: "edit"
+  showing_items_tagged: 
+    one: "Showing \"{{tag}}\" tagged items."
+    other: "Showing \"{{tag}}\" tagged items."
+  
+  facet_previous: "Â« Prvious"
+  facet_next: "Next »"
+  facet_sort_index: "A-Z Sort"
+  facet_sort_count: "Numerical Sort"
+  facet_more: "more Â"
+  
+
+
+  export_refworks: "Export to RefWorks"
+  export_endnote: "Export to EndNote"
+
+  
+  
+  back_to_search: "Back to Search!"
+  rsolr_request_error: "Sorry, I don't understand your search."
+  invalid_solr_id_error: "Sorry, you have requested a record that doesn't exist."
+
   bookmarks: "your bookmarks"
   bookmarks_title: "Bookmarks"
   your_bookmarks: "Your Bookmarks"
   new_bookmark: "New Bookmark."
   back_to_bookmarks: "<< back to my bookmarks"
-  back_to_search: "<< Back to search"
-  saved_searches_title: "Saved Searches"  
-  saved_searches: "your saved searches"
-  your_saved_searches: "Your saved searches"
   show_bookmark: "Showing Bookmark: {{title}}"
   edit_bookmark: "edit"
   editing_bookmark: "Editing Bookmark for \"{{title}}\""
-  user_required: "Please log in to see {{what}}."
   bookmark_user_required: "Please log in to manage and view your bookmarks."
   clear_bookmarks: "Clear Bookmarks"
   clear_bookmarks_confirm: "Clear your bookmarks?"
@@ -50,9 +151,6 @@ en:
   bookmark_title: "Title"
   bookmark_tags: "Tags"
   bookmark_notes:  "Notes"
-  show: "Show {{what}}."
-  all: "all"
-  edit: "edit"
   bookmark_search_submit: "find"
   added_bookmark: "Successfully added bookmark."
   added_bookmark_error: "There was a problem adding that bookmark."
@@ -60,67 +158,10 @@ en:
   removed_bookmark_error: "Couldn't remove that bookmark."
   cleared_bookmarks: "Cleared your bookmarks."
   cleared_bookmarks_error: "There was a problem clearing your bookmarks."
-  showing_items_tagged: 
-    one: "Showing \"{{tag}}\" tagged items."
-    other: "Showing \"{{tag}}\" tagged items."
-  item_is_in: "This item is in {{link}}"
-  bookmark_item: 
-    one: "Bookmark this item"
-    other: "Bookmark these items"
-  citation_mla: "MLA"
-  citation_apa: "APA"
-  spelling_suggestion: "Did you mean to type {{list}}?"
-  email_this: "Email This"
-  email_address: "Email:"
-  email_message: "Message:"
-  email_send: "Send"
-  
-  facet_previous: "Â« Previus"
-  facet_next: "Next Â»"
-  facet_sort_index: "A-Z Sort"
-  facet_sort_count: "Numerical Sort"
-  facet_more: "more Â"
-  
-  facet_title: "Limit your search"
 
-  marc_view: "Librarian View"
-  marc_leader: "LEADER {{leader}}"
-
-  search_q: "Search "
-  search_field: " in "
-  search_field_title: "Targeted search options"
-  search_submit: "search"
-
-  cite_this: "Cite This"
-  sms_this: "SMS This"
-  sms_select_carrier: "Please select your carrier"
-  sms_to: "Phone Number: "
-  sms_carrier: "Carrier:"
-  sms_send: "Send"
-  export_refworks: "Export to RefWorks"
-  export_endnote: "Export to EndNote"
-
-  results_per_page: "Show {{number}} per page"
-  results_per_page_title: "Number of results to display per page"
-  results_per_page_submit: "update"
-  results_sort_label: "Sort by "
-  results_sort_submit: "sort results"
-  
-  results_navigation_label: "Results navigation"
-  item: 
-    one: "item"
-    other: "items"
-  no_entries_found: "No {{what}} found"
-  page_entries_info: 
-    one: "Displaying <b>{{count}}</b> {{what}}"
-    other: "Displaying {{what}} <b>{{start}} - {{end}}</b> of <b>{{count}}</b>"
-  items_from_your_search: "Showing {{counter}} of {{total}} items from your search."
-  start_over: "Start&nbsp;over&thinsp;"
-  
-  remove_facet: "remove"
-  back_to_search: "Back to Search!"
-  rsolr_request_error: "Sorry, I don't understand your search."
-  invalid_solr_id_error: "Sorry, you have requested a record that doesn't exist."
+  saved_searches_title: "Saved Searches"  
+  saved_searches: "your saved searches"
+  your_saved_searches: "Your saved searches"
 
   saved_searches_save: "Successfully saved your search." 
   saved_searches_save_error: "The was a problem saving your search."
@@ -191,20 +232,6 @@ en:
   sms_record_author: " by {{author}}"
   sms_record_url: "Link: {{url}}"
 
-  record_mailer_subject: "Item Record: {{title}}"
-  constraints_title: "You searched for:"
-  constraints_icon_alt: "search icon"
-  constraints_checkmark_alt: "checkmark"
-  constraints_no_keywords: "No Keywords"
-  constraints_remove: "x"
 
-  application_name: "Blacklight"
-  catalog_index_title: "{{application}} Search Results"
-  results_text: "Search Results"
-  catalog_show_title: "{{document}} - {{application}}"
-  opensearch_title: "{{application}}"
-  opensearch_description: "{{application}} Search"
  
-  link_to_previous_document: "< Previous"
-  link_to_next_document: "Next >"
   

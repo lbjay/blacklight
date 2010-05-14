@@ -245,7 +245,7 @@ module ApplicationHelper
     '<span class="selected">' +
     render_facet_value(facet_solr_field, item, :suppress_link => true) +
     '</span>' +
-    ' [' + link_to(I18n.t(:remove_facet), remove_facet_params(facet_solr_field, item.value, params), :class=>"remove") + ']'
+    ' [' + link_to(I18n.t(:"catalog.facet.remove"), remove_facet_params(facet_solr_field, item.value, params), :class=>"remove") + ']'
   end
   
   # adds the value and/or field to params[:f]
@@ -347,7 +347,7 @@ module ApplicationHelper
 
   # link_back_to_catalog(:label=>'Back to Search')
   # Create a link back to the index screen, keeping the user's facet, query and paging choices intact by using session.
-  def link_back_to_catalog(opts={:label=>I18n.t(:back_to_search)})
+  def link_back_to_catalog(opts={:label=>I18n.t(:"catalog.back_to_index")})
     query_params = session[:search].dup || {}
     query_params.delete :counter
     query_params.delete :total
@@ -376,12 +376,12 @@ module ApplicationHelper
 
   def link_to_previous_document(previous_document)
     return if previous_document == nil
-    link_to_document previous_document, :label=>I18n.t(:link_to_previous_document), :counter => session[:search][:counter].to_i - 1
+    link_to_document previous_document, :label=>I18n.t(:"catalog.link_to_previous_document"), :counter => session[:search][:counter].to_i - 1
   end
 
   def link_to_next_document(next_document)
     return if next_document == nil
-    link_to_document next_document, :label=>I18n.t(:link_to_next_document), :counter => session[:search][:counter].to_i + 1
+    link_to_document next_document, :label=>I18n.t(:"catalog.link_to_next_document"), :counter => session[:search][:counter].to_i + 1
   end
 
 

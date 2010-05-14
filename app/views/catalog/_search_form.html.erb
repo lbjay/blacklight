@@ -1,13 +1,13 @@
 <div id="search" class="search">
   <% form_tag catalog_index_path, :method => :get do %>
-    <h2 class="search"><%= label_tag(:q, t(:search_q)) %></h2>
+    <h2 class="search"><%= label_tag(:q, t(:"catalog.search_form.keyword")) %></h2>
     <%= text_field_tag :q, params[:q], :class => "q" %>
-    <%= label_tag(:search_field, t(:search_field)) %>
-    <%= select_tag(:search_field, options_for_select(search_fields, h(params[:search_field])), :title => t(:search_field_title), :class=>"search_field") %>
+    <%= label_tag(:search_field, t(:"catalog.search_form.field")) %>
+    <%= select_tag(:search_field, options_for_select(search_fields, h(params[:"catalog.search_in"])), :title => t(:"catalog.search_field_title"), :class=>"search_field") %>
     
     <%= search_as_hidden_fields(:omit_keys => [:q, :search_field, :qt]) %>        
     
-    <%= submit_tag t(:search_submit), :class=>'submit' %>
+    <%= submit_tag t(:"catalog.search_submit"), :class=>'submit' %>
   <% end %>
 
   <hr/>

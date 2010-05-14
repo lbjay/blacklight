@@ -1,15 +1,15 @@
   <% if @pagination.has_previous? || @pagination.has_next? %>
     <div class="prev_next_links">
-      <span class="prev_link"><%= link_to_if(@pagination.has_previous?, t(:facet_previous)', catalog_facet_path( @pagination.params_for_previous_url( params) ) , :class=>:"prev_page")  %></span> 
+      <span class="prev_link"><%= link_to_if(@pagination.has_previous?, t(:"catalog.facet.previous"), catalog_facet_path( @pagination.params_for_previous_url( params) ) , :class=>:"prev_page")  %></span> 
           
-      <span class="next_link"><%= link_to_if(@pagination.has_next?, t(:facet_next)', catalog_facet_path( @pagination.params_for_next_url(params)), :class => "next_page" ) %></span>
+      <span class="next_link"><%= link_to_if(@pagination.has_next?, t(:"catalog.facet.next"), catalog_facet_path( @pagination.params_for_next_url(params)), :class => "next_page" ) %></span>
     </div>
   <% end %>
 
   <div class="sort_options">
-    <%=  link_to_unless(@pagination.sort == 'index', t(:facet_sort_index), @pagination.params_for_resort_url('index', params), :class => "sort_change") %> 
+    <%=  link_to_unless(@pagination.sort == 'index', t(:"catalog.facet.sort.index"), @pagination.params_for_resort_url('index', params), :class => "sort_change") %> 
     |
-    <%= link_to_unless(@pagination.sort == 'count', t(:facet_sort_count), @pagination.params_for_resort_url('count', params), :class => "sort_change") %>
+    <%= link_to_unless(@pagination.sort == 'count', t(:"catalog.facet.sort.count"), @pagination.params_for_resort_url('count', params), :class => "sort_change") %>
   </div>
 
 
