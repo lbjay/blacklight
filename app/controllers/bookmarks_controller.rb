@@ -27,33 +27,33 @@ class BookmarksController < ApplicationController
   
   def create
     if current_user.bookmarks.create(params[:bookmark])
-      flash[:notice] = I18n.t(:added_bookmark)
+      flash[:notice] = I18n.t(:"bookmarks.action.added")
     else
-      flash[:error] = I18n.t(:added_bookmark_error)
+      flash[:error] = I18n.t(:"bookmarks.error.added")
     end
     redirect_to :back
   end
   
   def destroy
     if current_user.bookmarks.delete(Bookmark.find(params[:id]))
-      flash[:notice] = I18n.t(:removed_bookmark)
+      flash[:notice] = I18n.t(:"bookmarks.action.removed")
     else
-      flash[:error] = I18n.t(:removed_bookmark_error)
+      flash[:error] = I18n.t(:"bookmarks.error.removed")
     end
     redirect_to :back
   end
   
   def clear    
     if current_user.bookmarks.clear
-      flash[:notice] = I18n.t(:cleared_bookmark) 
+      flash[:notice] = I18n.t(:"bookmarks.action.cleared")
     else
-      flash[:error] = I18n.t(:cleared_bookmark_error) 
+      flash[:error] = I18n.t(:"bookmarks.error.cleared")
     end
     redirect_to :action => "index"
   end
   
   protected
   def verify_user
-    flash[:error] = I18n.t(:bookmark_user_required) and redirect_to :back unless current_user
+    flash[:error] = I18n.t(:"bookmarks.user_required") and redirect_to :back unless current_user
   end
 end

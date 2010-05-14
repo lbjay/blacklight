@@ -17,6 +17,11 @@ en:
         password_confirmation: "Confirm Password"
         
   application_name: "Blacklight"
+  close: "Close [x]"
+  cancel: "Cancel"
+  user_required_for_x: "Please log in to see {{what}}."
+  show_x: "Show {{what}}."
+  all: "all"
 
   catalog:
     index_title: "{{application}} Search Results"
@@ -91,73 +96,55 @@ en:
       checkmark_alt: "checkmark"
       no_keywords: "No Keywords"
       remove: "x"
-     
+  util:
+    log_out: "Log Out"
+    log_in: "Login"
+    last_search_link: "View your last search"
+    bookmarks_link: "Your Bookmarks"
+    saved_searches_link: "Saved Searches"
+    recent_searches_link: "Your recent searches"    
+    search_history_link: "Search History"
+
+  bookmarks:
+    label: "bookmarks"
+    user_required: "Please log in to manage and view your bookmarks."
+    no_items: "You have no bookmarks"
+    edit_title: "Editing Bookmark for \"{{title}}\"" 
+    show_title: "Showing Bookmark: {{title}}"
+    new_title: "New Bookmark."
+    back_to_index: "<< back to my bookmarks"
+    index_title: "Bookmarks"
+    your_items: "Your Bookmarks"
+    clear: "Clear Bookmarks"
+    clear_confirm: "Clear your bookmarks?"
+    edit: "edit"
+    remove: "remove"
+    remove_confirm: "Remove this bookmark?"
+    search_title: "Search your bookmarks"
+    search:
+      submit: "find"
+    tags_title: "Tags"
+    tags:
+      showing_items_tagged_x: "Showing \"{{tag}}\" tagged items."
+    action:
+      added: "Successfully added bookmark."
+      removed: "Successfully removed that bookmark."
+      cleared: "Cleared your bookmarks."
+    error:
+      added: "There was a problem adding that bookmark."
+      removed: "Couldn't remove that bookmark."
+      cleared: "There was a problem clearing your bookmarks."
+    
+    
      
 
   hello: "Hello world"
-  close: "Close [x]"
-  cancel: "Cancel"
-  log_out: "Log Out"
-  log_in: "Login"
 
-  user_required_for_x: "Please log in to see {{what}}."
-
-  search_history_title: "Search History"
-  your_last_search: "View your last search"
-  your_recent_searches: "Your recent searches"
-
-  show_x: "Show {{what}}."
-  all: "all"
   edit: "edit"
-  showing_items_tagged: 
-    one: "Showing \"{{tag}}\" tagged items."
-    other: "Showing \"{{tag}}\" tagged items."
-  
-  facet_previous: "Â« Prvious"
-  facet_next: "Next »"
-  facet_sort_index: "A-Z Sort"
-  facet_sort_count: "Numerical Sort"
-  facet_more: "more Â"
-  
-
-
-  export_refworks: "Export to RefWorks"
-  export_endnote: "Export to EndNote"
-
-  
   
   back_to_search: "Back to Search!"
   rsolr_request_error: "Sorry, I don't understand your search."
   invalid_solr_id_error: "Sorry, you have requested a record that doesn't exist."
-
-  bookmarks: "your bookmarks"
-  bookmarks_title: "Bookmarks"
-  your_bookmarks: "Your Bookmarks"
-  new_bookmark: "New Bookmark."
-  back_to_bookmarks: "<< back to my bookmarks"
-  show_bookmark: "Showing Bookmark: {{title}}"
-  edit_bookmark: "edit"
-  editing_bookmark: "Editing Bookmark for \"{{title}}\""
-  bookmark_user_required: "Please log in to manage and view your bookmarks."
-  clear_bookmarks: "Clear Bookmarks"
-  clear_bookmarks_confirm: "Clear your bookmarks?"
-  remove_bookmark: "remove"
-  remove_bookmark_confirm: 
-    one: "Remove this bookmark?"
-    other: "Remove these bookmarks?"
-  no_bookmarks: "You have no bookmarks"
-  search_bookmarks: "Search your bookmarks"
-  bookmark_tags: "Bookmark Tags"
-  bookmark_title: "Title"
-  bookmark_tags: "Tags"
-  bookmark_notes:  "Notes"
-  bookmark_search_submit: "find"
-  added_bookmark: "Successfully added bookmark."
-  added_bookmark_error: "There was a problem adding that bookmark."
-  removed_bookmark: "Successfully removed that bookmark."
-  removed_bookmark_error: "Couldn't remove that bookmark."
-  cleared_bookmarks: "Cleared your bookmarks."
-  cleared_bookmarks_error: "There was a problem clearing your bookmarks."
 
   saved_searches_title: "Saved Searches"  
   saved_searches: "your saved searches"

@@ -1,7 +1,7 @@
-<h2><%= t(:editing_bookmark, :title => link_to(@bookmark.title, catalog_path(@bookmark.document_id))) %></h2>
+<h2><%= t(:"bookmarks.edit_title", :title => link_to(@bookmark.title, catalog_path(@bookmark.document_id))) %></h2>
 
 <% sidebar_items << capture do %>
-  <%= link_to t(:back_to_bookmarks), bookmarks_path %>
+  <%= link_to t(:"bookmarks.back_to_index"), bookmarks_path %>
 <% end %>
 
 <% form_for @bookmark, :url => bookmark_path do |f| %>

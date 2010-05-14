@@ -1,18 +1,18 @@
-<%= t(:show_bookmark, :title => h(@bookmark.title)) %>
+<%= t(:"bookmarks.show_title", :title => h(@bookmark.title)) %>
 
 <% sidebar_items << capture do %>
-  <%= link_to t(:back_to_bookmarks), bookmarks_path %>
+  <%= link_to t(:"bookmarks.back_to_index"), bookmarks_path %>
 <% end %>
 
-<%= link_to t(:edit), edit_object_path %>
+<%= link_to t(:"bookmarks.edit"), edit_object_path %>
 
 <dl>
-	<dt><%= t(:bookmark_title) %></dt>
+	<dt><%= t(:"activerecord.attributes.bookmark.title") %></dt>
 	<dd><%= h @bookmark.title %></dd>
 	
-	<dt><%= t(:bookmark_tags) %></dt>
+	<dt><%= t(:"activerecord.attributes.bookmark.tags") %></dt>
 	<dd><%= h @bookmark.tag_list %></dd>
 	
-	<dt><%= t(:bookmark_notes) %></dt>
+	<dt><%= t(:"activerecord.attributes.bookmark.notes") %></dt>
 	<dd><%= h @bookmark.notes %></dd>
 </dl>
