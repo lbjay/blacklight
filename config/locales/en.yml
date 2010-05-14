@@ -38,10 +38,11 @@ en:
     results_text: "Search Results"
     opensearch_title: "{{application}}"
     opensearch_description: "{{application}} Search"
-    search_keyword: "Search "
-    search_in: " in "
-    search_field_title: "Targeted search options"
-    search_submit: "search"
+    search:
+      keyword: "Search "
+      field: " in "
+      field_title: "Targeted search options"
+      submit: "search"
     document_is_bookmarked: "This item is in {{link}}"
     document_bookmark_link: "your bookmarks"
     bookmark:
