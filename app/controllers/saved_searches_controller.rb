@@ -7,9 +7,9 @@ class SavedSearchesController < ApplicationController
   
   def save    
     if Search.update(params[:id], :user_id => current_user.id)
-      flash[:notice] = I18n.t(:"saved_searches.action.save")
+      flash[:notice] = I18n.t(:"saved_searches.action.saved")
     else
-      flash[:error] = I18n.t(:"saved_searches.error.save")
+      flash[:error] = I18n.t(:"saved_searches.error.saved")
     end
     redirect_to :back
   end
