@@ -1,4 +1,4 @@
-<h1><%= t(:feedback_title) %></h1>
+<h1><%= t(:"feedback.show_title") %></h1>
 
 <% unless @errors.empty? %>
   <strong><%= t(:form_errors) %></strong>
@@ -11,10 +11,10 @@
 
 <% form_tag do %>
   <fieldset>
-    <div class="row"><%= label_tag t(:feedback_name) %> <%= text_field_tag :name, params[:name] %></div>
-    <div class="row"><%= label_tag t(:feedback_email) %> <%= text_field_tag :email, params[:email] %></div>
-    <div class="row"><%= label_tag t(:feedback_message) %> <%= text_area_tag :message, params[:message] %></div>
+    <div class="row"><%= label_tag t(:"activerecord.attributes.feedback.name") %> <%= text_field_tag :name, params[:name] %></div>
+    <div class="row"><%= label_tag t(:"activerecord.attributes.feedback.email") %> <%= text_field_tag :email, params[:email] %></div>
+    <div class="row"><%= label_tag t(:"activerecord.attributes.feedback.message") %> <%= text_area_tag :message, params[:message] %></div>
     <%#= show_simple_captcha(:image_style => 'random', :label => "Enter the characters you see into the text field") %>
-    <div class="row"><%= label_tag '' %><%= submit_tag t(:feedback_submit) %></div>
+    <div class="row"><%= label_tag '' %><%= submit_tag t(:"feedback.submit") %></div>
   </fieldset>
 <% end %>

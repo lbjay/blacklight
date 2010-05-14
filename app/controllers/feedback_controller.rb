@@ -20,13 +20,13 @@ class FeedbackController < ApplicationController
   # returns either an empty array or an array with error messages
   def validate
     unless params[:name] =~ /\w+/
-      @errors << I18n.t(:feedback_error_name)
+      @errors << I18n.t(:"feedback.error.name")
     end
     unless params[:email] =~ /\w+@\w+\.\w+/
-      @errors << I18n.t(:feedback_error_email)
+      @errors << I18n.t(:"feedback.error.email")
     end
     unless params[:message] =~ /\w+/
-      @errors << I18n.t(:feedback_error_message)
+      @errors << I18n.t(:"feedback.error.message")
     end
     #unless simple_captcha_valid?
     #  @errors << 'Captcha did not match'

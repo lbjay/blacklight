@@ -10,6 +10,10 @@ en:
         title: "Title"
         tags: "Tags"
         notes: "Notes"
+      feedback:
+        name: "Your Name"
+        email: "Your Email"
+        message: "Your Message"
       user:
         login: "Login"
         email: "Email"
@@ -22,6 +26,7 @@ en:
   user_required_for_x: "Please log in to see {{what}}."
   show_x: "Show {{what}}."
   all: "all"
+  form_errors: "Please fix the following form errors:"
 
   catalog:
     index_title: "{{application}} Search Results"
@@ -134,6 +139,15 @@ en:
       added: "There was a problem adding that bookmark."
       removed: "Couldn't remove that bookmark."
       cleared: "There was a problem clearing your bookmarks."
+
+  feedback:
+    complete_title: "Thank you for your feedback"
+    show_title: "Send Us Feedback"
+    submit: "Send!"
+    error:
+      name: 'A valid name is required'
+      email: 'A valid email address is required'
+      message: 'A message is required'
     
     
      
@@ -194,16 +208,6 @@ en:
   user_bookmarks: "Bookmarks"
   user_bookmarks_view: "view"
 
-  feedback_title: "Send Us Feedback"
-  form_errors: "Please fix the following form errors:"
-  feedback_name: "Your Name"
-  feedback_email: "Your Email"
-  feedback_message: "Your Message"
-  feedback_submit: "Send!"
-  feedback_complete: "Thank you for your feedback"
-  feedback_error_name: 'A valid name is required'
-  feedback_error_email: 'A valid email address is required'
-  feedback_error_message: 'A message is required'
   
   send_email_record_error_number: "You must enter a valid 10 digit phone number"
   send_email_record_error_carrier: "You must select a carrier"
