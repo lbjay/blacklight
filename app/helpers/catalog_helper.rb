@@ -20,13 +20,12 @@ module CatalogHelper
 
       if collection.total_pages < 2
         case collection.size
-        when 0; I18n.t :"catalog.no_entries_found", :what => I18n.t("catalog." + entry_name.to_sym, :count => total_num)
-	when 1; I18n.t :"catalog.page_entries_info", :count => total_num, :start => start_num, :end => end_num, :what => I18n.t(("catalog." + entry_name).to_sym, :count => total_num)
-	else; I18n.t :"catalog.page_entries_info", :count => total_num, :start => start_num, :end => end_num, :what => I18n.t(("catalog." + entry_name).to_sym, :count => total_num)
+        when 0; I18n.t :"catalog.no_entries_found", :what => I18n.t(("catalog." + entry_name).to_sym, :count => total_num)
+	else; I18n.t :"catalog.page_entries_info_by_item", :num => total_num, :count => total_hits, :start => start_num, :end => end_num, :what => I18n.t(("catalog." + entry_name).to_sym, :count => total_hits)
  # i18n ERROR // WAS:  "Displaying <b>all #{total_num}</b> #{entry_name.pluralize}"
         end
       else
-	I18n.t :"catalog.page_entries_info", :count => total_num, :start => start_num, :end => end_num, :what => I18n.t(("catalog."+ entry_name).to_sym, :count => total_num)
+	I18n.t :"catalog.page_entries_info_by_page", :num => total_num, :count => total_hits, :start => start_num, :end => end_num, :what => I18n.t(("catalog."+ entry_name).to_sym, :count => total_hits)
       end
   end
 

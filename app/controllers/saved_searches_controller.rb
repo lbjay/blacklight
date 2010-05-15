@@ -18,9 +18,9 @@ class SavedSearchesController < ApplicationController
   # is in the session[:history]
   def destroy
     if current_user.search_ids.include?(params[:id].to_i) && Search.update(params[:id].to_i, :user_id => nil)
-      flash[:notice] = I18n.t(:"saved_searches.destroy")
+      flash[:notice] = I18n.t(:"saved_searches.action.destroyed")
     else
-      flash[:error] = I18n.t(:"saved_searches.error.destroy")
+      flash[:error] = I18n.t(:"saved_searches.error.destroyed")
     end
     redirect_to :back
   end
@@ -29,9 +29,9 @@ class SavedSearchesController < ApplicationController
   # are in the session[:history]
   def clear    
     if Search.update_all("user_id = NULL", "user_id = #{current_user.id}")
-      flash[:notice] = I18n.t(:"saved_searches.action.clear")
+      flash[:notice] = I18n.t(:"saved_searches.action.cleared")
     else
-      flash[:error] =  I18n.t(:"saved_searches.error.clear")
+      flash[:error] =  I18n.t(:"saved_searches.error.cleared")
     end
     redirect_to :action => "index"
   end

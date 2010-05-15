@@ -89,9 +89,12 @@ en:
       one: "item"
       other: "items"
     no_entries_found: "No {{what}} found"
-    page_entries_info: 
-      one: "Displaying <b>{{count}}</b> {{what}}"
-      other: "Displaying {{what}} <b>{{start}} - {{end}}</b> of <b>{{count}}</b>"
+    page_entries_info_by_item:
+      one: "Displaying <b>{{num}}</b> {{what}}"
+      other: "Displaying <b>all {{num}}</b> {{what}}"
+    page_entries_info_by_page:
+      one: "Displaying <b>{{num}}</b> {{what}}"
+      other: "Displaying {{what}} <b>{{start}} - {{end}}</b> of <b>{{num}}</b>"
     items_from_your_search: "Showing {{counter}} of {{total}} items from your search."
     start_over: "Start&nbsp;over&thinsp;"
     link_to_previous_document: "< Previous"
@@ -106,7 +109,7 @@ en:
       remove: "x"
 
   bookmarks:
-    label: "bookmarks"
+    label: "your bookmarks"
     user_required: "Please log in to manage and view your bookmarks."
     no_items: "You have no bookmarks"
     edit_title: "Editing Bookmark for \"{{title}}\"" 
@@ -147,7 +150,7 @@ en:
     user_required: "Please log in to manage and view your saved searches."
     action:
       saved: "Successfully saved your search." 
-      destoyed: "Successfully removed that saved search." 
+      destroyed: "Successfully removed that saved search." 
       cleared: "Cleared your saved searches."
     error:
       saved: "The was a problem saving your search."
