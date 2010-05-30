@@ -196,7 +196,19 @@ module ApplicationHelper
   def document_show_field_labels
     Blacklight.config[:show_fields][:labels]
   end
+
+  def document_list_partial_name
+    'catalog/document_list'
+  end
   
+  def render_document_list_partial
+    begin
+      render :partial=>document_list_partial_name
+    rescue ActionView::MissingTemplate
+      render :partial=>"catalog/document_list"
+    end
+  end
+
   # currently only used by the render_document_partial helper method (below)
   def document_partial_name(document)
     document[Blacklight.config[:show][:display_type]]

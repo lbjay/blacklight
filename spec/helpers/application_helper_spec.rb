@@ -351,6 +351,12 @@ describe ApplicationHelper do
     end
     
   end
+
+  describe "document_list_partial_name" do
+    it "should return a string" do
+      document_list_partial_name.should be_a_kind_of(String)
+    end
+  end
   
   
 end
