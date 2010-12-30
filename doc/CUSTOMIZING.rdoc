@@ -16,7 +16,7 @@ One of the most common things you might need to is create a view helper. Blackli
 
   1. create a new file here: app/helpers/application_helper.rb
   2. bring in the existing application helper code by adding this line:
-    require 'vendor/plugins/blacklight/app/helpers/application_helper.rb'
+    require_dependency 'vendor/plugins/blacklight/app/helpers/application_helper.rb'
   3. "re-open" the ApplicationHelper module by adding this to the file:
     module AppliationHelper
       
@@ -27,7 +27,7 @@ One of the most common things you might need to is create a view helper. Blackli
     end
 
 You'll end up with something like this, in your app/helpers/application_helper.rb file:
-  require 'vendor/plugins/blacklight/app/helpers/application_helper.rb'
+  require_dependency 'vendor/plugins/blacklight/app/helpers/application_helper.rb'
   module AppliationHelper
     def application_name
       'my new application name'
